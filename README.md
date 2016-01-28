@@ -1,2 +1,2 @@
 # prism
-Converting color into sound
+Refracting color into sound
