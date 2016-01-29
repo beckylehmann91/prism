@@ -6,6 +6,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @post = Post.find(params[:id])
     @images = @post.images.all
   end
 
@@ -14,23 +15,29 @@ class PostsController < ApplicationController
      @image = @post.images.build
    end
 
-   def create
+  def create
      @post = Post.new(post_params)
 
      respond_to do |format|
-       if @post.save
+      if @post.save
         p params[:images]['filename']
          params[:images]['filename'].each do |a|
-          @image = @post.images.create!(:filename => a)
-          p "_______________________________"
-          p @post.images[0].filename
-          p "_______________________________"
-        end
+            @image = @post.images.create!(:filename => a)
+            p "_______________________________"
+            p @post.images[0].filename
+            p "_______________________________"
+          end
+        # algo here
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
       else
        format.html { render action: 'new' }
-     end
-   end
+      end
+    end
+  end
+
+  def destroy
+    @post.destroy
+    redirect_to posts_path
   end
 
   private
