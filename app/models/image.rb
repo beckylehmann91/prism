@@ -1,9 +1,16 @@
 class Image < ActiveRecord::Base
+  mount_uploader :filename, FileUploader
+  belongs_to :post
   has_many :colors
 
+  def file_path
+    self.filename.file.file
+  end
+
   def convert_to_canvas
-    image = ChunkyPNG::Image.from_file(self.filename)
-    image.save(self.filename, :best_compression)
+    file_path = self.file_path
+    image = ChunkyPNG::Image.from_file(file_path)
+    image.save(file_path, :best_compression)
     image
   end
 
