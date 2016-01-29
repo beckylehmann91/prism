@@ -11,15 +11,47 @@ class Image < ActiveRecord::Base
     file_path = self.file_path
     image = ChunkyPNG::Image.from_file(file_path)
     image.save(file_path, :best_compression)
-    image
+    image.pixels
   end
 
-  def convert_to_palette
-    palette = self.convert_to_canvas.palette
-    palette.map do |color|
+  def most_common_value
+    self.group_by(&:itself).values.max_by(&:size).first
+  end
+
+  def find_height
+    canvas = self.convert_to_canvas
+    canvas.height
+  end
+
+  def convert_color_to_array
+    canvas = self.convert_to_canvas
+    canvas.map do |color|
       ChunkyPNG::Color.to_truecolor_alpha_bytes(color)
     end
   end
+
+  def count_occurrences
+    array = self.convert_color_to_array
+    occurrences = {}
+    array.sort.uniq.each { |color| occurrences[color] = array.count(color)}
+    occurrences
+  end
+
+  # def count_occurrences
+  #   array = self.convert_color_to_array
+  #   occurrences = {}
+  #   counter = 1
+  #   array.each_with_index do |color, index|
+  #     if color == array[index + 1]
+  #       counter += 1
+  #     else
+  #       occurrences[color] = counter
+  #       counter = 1
+  #     end
+  #   end
+  #   occurrences
+  # end
+
 
   def create_colors
     colors_array = self.convert_to_palette
@@ -29,3 +61,6 @@ class Image < ActiveRecord::Base
   end
 
 end
+
+
+
