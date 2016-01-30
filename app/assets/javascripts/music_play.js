@@ -1,34 +1,31 @@
 $(function() {
+
   soundManager.setup({
-    // where to find flash audio SWFs, as needed
-    url: '',
     onready: function() {
-      // SM2 is ready to play audio!
-        // create "mySound"...
-      var mySound1 = soundManager.createSound({
-        url: gon.sounds[0],
-      });
+      var music = []
 
-      var mySound2 = soundManager.createSound({
-        url: gon.sounds[1],
-      });
+      // create sound variables
+      for (var i = 0; i < gon.sounds.length; i++) {
+        music[i] = soundManager.createSound({
+          url: gon.sounds[i],
+        });
+      };
 
-      var mySound3 = soundManager.createSound({
-        url: gon.sounds[2],
-      });
-        // ...and play it
+      // play songs
+      console.log(music)
       $('div #play').on('click', function() {
-        mySound1.play();
-        mySound2.play();
-        mySound3.play();
+        for(var i = 0; i < gon.sounds.length; i++){
+          music[i].play();
+        }
       });
 
-      // ...and play it
+      // stop playback
       $('div #stop').on('click', function() {
-        mySound1.stop();
-        mySound2.stop();
-        mySound3.stop();
+        for(var i = 0; i < gon.sounds.length; i++){
+          music[i].stop();
+        }
       });
     }
   });
+
 });
