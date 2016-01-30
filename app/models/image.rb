@@ -1,7 +1,8 @@
  class Image < ActiveRecord::Base
   mount_uploader :filename, FileUploader
   belongs_to :post
-  has_many :colors
+  has_many :sound_tags
+  has_many :sounds, through: :sound_tags
 
   # gets image path
   def file_path
