@@ -4,6 +4,8 @@
   has_many :sound_tags
   has_many :sounds, through: :sound_tags
 
+  before_save :h_w
+
   # gets image path
   def file_path
     self.filename.file.file
@@ -85,8 +87,15 @@
     averages.map do |row|
       luminence_values << (row[0] * 0.2126) + (row[1] * 0.7152) + (row[2] * 0.0722)
     end
-    length = luminence_values.length
-    return ((((luminence_values.reduce(:+))/length)/ 255) * 10).ceil
+    luminence_values
+    # length = luminence_values.length
+    # return ((((luminence_values.reduce(:+))/length)/ 255) * 10).ceil
+  end
+
+  def measure_luminence
+    luminence = self.luminence
+    length = luminence.length
+    return ((((luminence.reduce(:+))/length)/ 255) * 10).ceil
   end
 
   # number of color occurances
@@ -106,8 +115,35 @@
 
   # get contrast ratio
   def contrast
-    contrast = self.luminence.reverse!
+    contrast = self.luminence.sort.reverse!
+    p contrast
     contrast = ((contrast.first + 0.05)/(contrast.last + 0.05))
+
+    if contrast >= 5.5
+      return 10
+    elsif contrast >= 5 && contrast < 5.5
+      return 9
+    elsif contrast >= 4.5 && contrast < 5
+      return 8
+    elsif contrast >= 4 && contrast < 4.5
+      return 7
+    elsif contrast >= 3.5 && contrast < 4
+      return 6
+    elsif contrast >= 3 && contrast < 3.5
+      return 5
+    elsif contrast >= 2.5 && contrast < 3
+      return 4
+    elsif contrast >= 2 && contrast < 2.5
+      return 3
+    elsif contrast >= 1.5 && contrast < 2
+      return 2
+    else return 1
+    end
+
+  end
+
+  def color_variety
+    (self.convert_to_canvas.palette.length).to_f/(self.height * self.width).to_f
   end
 
   def melody
@@ -126,6 +162,8 @@
     self.sounds.map { |sound| sound.filename }
   end
 end
+
+
 
 
 
