@@ -8,7 +8,7 @@ gem 'gon'
 gem 'piet'
 
 # gem 'piet-binary'
-gem 'mini_magick'
+  gem 'mini_magick'
 
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.15'

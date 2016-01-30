@@ -46,6 +46,7 @@
   end
 
   def create_rows
+    self.h_w
     array = self.convert_color_to_array
     array.each_slice(self.width).to_a
   end
@@ -107,6 +108,22 @@
   def contrast
     contrast = self.luminence.reverse!
     contrast = ((contrast.first + 0.05)/(contrast.last + 0.05))
+  end
+
+  def melody
+    Sound.find_by(luminence: self.luminence)
+  end
+
+  # def pad
+  #   Sound.find_by(contrast: self.contrast)
+  # end
+
+  def sounds
+    [self.melody]
+  end
+
+  def sound_urls
+    self.sounds.map { |sound| sound.filename }
   end
 end
 

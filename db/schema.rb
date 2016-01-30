@@ -16,16 +16,6 @@ ActiveRecord::Schema.define(version: 20160130000449) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "colors", force: :cascade do |t|
-    t.integer  "r"
-    t.integer  "g"
-    t.integer  "b"
-    t.integer  "a"
-    t.integer  "image_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "images", force: :cascade do |t|
     t.integer  "post_id"
     t.integer  "height"
@@ -43,20 +33,21 @@ ActiveRecord::Schema.define(version: 20160130000449) do
 
   create_table "sound_tags", force: :cascade do |t|
     t.integer  "sound_id"
-    t.integer  "post_id"
+    t.integer  "image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "sound_tags", ["post_id"], name: "index_sound_tags_on_post_id", using: :btree
+  add_index "sound_tags", ["image_id"], name: "index_sound_tags_on_image_id", using: :btree
   add_index "sound_tags", ["sound_id"], name: "index_sound_tags_on_sound_id", using: :btree
 
   create_table "sounds", force: :cascade do |t|
     t.string   "filename"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "luminence"
   end
 
-  add_foreign_key "sound_tags", "posts"
+  add_foreign_key "sound_tags", "images"
   add_foreign_key "sound_tags", "sounds"
 end
