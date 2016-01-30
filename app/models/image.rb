@@ -106,6 +106,28 @@
   def contrast
     contrast = self.luminence.reverse!
     contrast = ((contrast.first + 0.05)/(contrast.last + 0.05))
+
+    if contrast >= 5.5
+      return 10
+    elsif contrast >= 5 && contrast < 5.5
+      return 9
+    elsif contrast >= 4.5 && contrast < 5
+      return 8
+    elsif contrast >= 4 && contrast < 4.5
+      return 7
+    elsif contrast >= 3.5 && contrast < 4
+      return 6
+    elsif contrast >= 3 && contrast < 3.5
+      return 5
+    elsif contrast >= 2.5 && contrast < 3
+      return 4
+    elsif contrast >= 2 && contrast < 2.5
+      return 3
+    elsif contrast >= 1.5 && contrast < 2
+      return 2
+    else return 1
+    end
+
   end
 end
 
