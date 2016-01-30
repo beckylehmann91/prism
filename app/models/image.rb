@@ -150,12 +150,16 @@
     Sound.find_by(luminence: self.luminence)
   end
 
-  # def pad
-  #   Sound.find_by(contrast: self.contrast)
-  # end
+  def pad
+    Sound.find_by(contrast: self.contrast)
+  end
+
+  def color
+    Sound.find_by(color_variety: self.color_variety)
+  end
 
   def sounds
-    [self.melody]
+    [self.melody, self.pad, self.color]
   end
 
   def sound_urls

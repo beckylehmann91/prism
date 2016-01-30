@@ -4,7 +4,7 @@ $(function() {
     onready: function() {
       var music = []
 
-      console.log(gon.sounds.length);
+      console.log("length" + gon.sounds.length);
 
       // create sound variables
       for (var i = 0; i < gon.sounds.length; i++) {
@@ -12,7 +12,6 @@ $(function() {
           url: gon.sounds[0],
         });
       };
-
 
       console.log(music)
       // play songs
