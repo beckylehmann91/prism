@@ -83,7 +83,8 @@
     averages.map do |row|
       luminence_values << (row[0] * 0.2126) + (row[1] * 0.7152) + (row[2] * 0.0722)
     end
-    return luminence_values
+    length = luminence_values.length
+    return ((((luminence_values.reduce(:+))/length)/ 255) * 10).ceil
   end
 
   # number of color occurances
