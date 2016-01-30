@@ -32,7 +32,7 @@ class PostsController < ApplicationController
         # algorithm here
         # put below in a method but create three sounds objects
         @post.sounds << Sound.create(filename: "/sounds/Strings_6_CMa_100.mp3")
-        @post.sounds << Sound.create(filename: "/sounds/Piano_CMa_100.mp3")
+        @post.sounds << Sound.create(filename: "/sounds/Piano_CMa_100.mp3", luminence: 6)
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
       else
        format.html { render action: 'new' }
