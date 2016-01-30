@@ -3,6 +3,7 @@
   belongs_to :post
   has_many :colors
 
+  # gets image path
   def file_path
     self.filename.file.file
   end
@@ -17,11 +18,13 @@
     self.width = canvas.width
   end
 
+  # calc height and width of image
   def h_w
     self.image_height
     self.image_width
   end
 
+  # convert to canvas object (all image colors)
   def convert_to_canvas
     file_path = self.file_path
     image = ChunkyPNG::Image.from_file(file_path)
@@ -46,6 +49,7 @@
     array.each_slice(self.width).to_a
   end
 
+  # sum all RGB values in a row
   def transpose_rows
     array = self.create_rows
     array.map do |row|
@@ -53,6 +57,7 @@
     end
   end
 
+  # take sum and divide by width of image
   def sum_attributes
     transposed_array = self.transpose_rows
     transposed_array.map do |row|
@@ -71,13 +76,17 @@
     end
   end
 
+  # take row and each RGB value and calculate luminence
   def luminence
     averages = self.average_attributes
+    luminence_values = []
     averages.map do |row|
-      (row[0] * 0.2126) + (row[1] * 0.7152) + (row[2] * 0.0722)
+      luminence_values << (row[0] * 0.2126) + (row[1] * 0.7152) + (row[2] * 0.0722)
     end
+    return luminence_values
   end
 
+  # number of color occurances
   def count_occurrences
     array = self.convert_color_to_array
     occurrences = {}
@@ -92,6 +101,11 @@
     end
   end
 
+  # get contrast ratio
+  def contrast
+    contrast = self.luminence.reverse!
+    contrast = ((contrast.first + 0.05)/(contrast.last + 0.05))
+  end
 end
 
 
