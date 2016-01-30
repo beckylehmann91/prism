@@ -3,6 +3,8 @@
   belongs_to :post
   has_many :colors
 
+  before_save :h_w
+
   # gets image path
   def file_path
     self.filename.file.file
@@ -83,8 +85,15 @@
     averages.map do |row|
       luminence_values << (row[0] * 0.2126) + (row[1] * 0.7152) + (row[2] * 0.0722)
     end
-    length = luminence_values.length
-    return ((((luminence_values.reduce(:+))/length)/ 255) * 10).ceil
+    luminence_values
+    # length = luminence_values.length
+    # return ((((luminence_values.reduce(:+))/length)/ 255) * 10).ceil
+  end
+
+  def measure_luminence
+    luminence = self.luminence
+    length = luminence.length
+    return ((((luminence.reduce(:+))/length)/ 255) * 10).ceil
   end
 
   # number of color occurances
@@ -104,7 +113,8 @@
 
   # get contrast ratio
   def contrast
-    contrast = self.luminence.reverse!
+    contrast = self.luminence.sort.reverse!
+    p contrast
     contrast = ((contrast.first + 0.05)/(contrast.last + 0.05))
 
     if contrast >= 5.5
@@ -129,7 +139,13 @@
     end
 
   end
+
+  def color_variety
+    (self.convert_to_canvas.palette.length).to_f/(self.height * self.width).to_f
+  end
 end
+
+
 
 
 

@@ -16,16 +16,6 @@ ActiveRecord::Schema.define(version: 20160130000449) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "colors", force: :cascade do |t|
-    t.integer  "r"
-    t.integer  "g"
-    t.integer  "b"
-    t.integer  "a"
-    t.integer  "image_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "images", force: :cascade do |t|
     t.integer  "post_id"
     t.integer  "height"
@@ -55,6 +45,7 @@ ActiveRecord::Schema.define(version: 20160130000449) do
     t.string   "filename"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "luminence"
   end
 
   add_foreign_key "sound_tags", "posts"
