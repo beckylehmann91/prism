@@ -104,8 +104,6 @@
   # get contrast ratio
   def contrast
     contrast = self.luminence.reverse!
-    p contrast.first
-    p contrast.last
     contrast = ((contrast.first + 0.05)/(contrast.last + 0.05))
   end
 end
