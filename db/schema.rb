@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(version: 20160130000449) do
 
   create_table "images", force: :cascade do |t|
     t.integer  "post_id"
+    t.integer  "height"
+    t.integer  "width"
     t.string   "filename"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
