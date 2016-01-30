@@ -3,10 +3,13 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
-
+# to recieve ruby data instantly in javascript
+gem 'gon'
 gem 'piet'
+
 # gem 'piet-binary'
 # gem 'rmagick'
+
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.15'
 # Use SCSS for stylesheets
