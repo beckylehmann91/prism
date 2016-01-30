@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  include ApplicationHelper
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -7,7 +8,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    gon.sounds = @post.sounds
+    gon.sounds = sounds(@post) # return array of sounds
     @images = @post.images.all
   end
 
@@ -29,8 +30,8 @@ class PostsController < ApplicationController
             p "_______________________________"
           end
         # algorithm here
-        @post.sounds << "/sounds/ambient1.mp3"
-        gon.file = @post.sounds.first
+        # put below in a method but create three sounds objects
+        @post.sounds << Sound.create(filename: "/sounds/synth.mp3")
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
       else
        format.html { render action: 'new' }
