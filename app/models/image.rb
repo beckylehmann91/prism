@@ -143,7 +143,7 @@
   end
 
   def color_variety
-    (self.convert_to_canvas.palette.length).to_f/(self.height * self.width).to_f
+    (((self.convert_to_canvas.palette.length).to_f/(self.height * self.width).to_f) * 10).ceil
   end
 
   def melody
