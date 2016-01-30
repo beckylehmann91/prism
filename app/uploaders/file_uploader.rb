@@ -7,9 +7,9 @@ class FileUploader < CarrierWave::Uploader::Base
   # include CarrierWave::MiniMagick
 
 
-  version :resized do
-    process :resize_to_fit => [100, 10000]
-  end
+  # version :resized do
+  #   process :resize_to_fit => [100, 10000]
+  # end
   # Choose what kind of storage to use for this uploader:
   storage :file
   # storage :fog

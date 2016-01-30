@@ -6,9 +6,13 @@
 </p>
 
 <% @images.each do |p| %>
-  <%= image_tag p.filename_url %>
+  <%= image_tag p.filename_url, :class =>"photo" %>
   <%= link_to "Edit Attachment", edit_image_path(p) %>
 <% end %>
+<div>
+  <a href="#" id="play">play</a>
+  <a href="#" id="stop">stop</a>
+</div>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
