@@ -7,6 +7,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    gon.sounds = @post.sounds
     @images = @post.images.all
   end
 
@@ -27,7 +28,9 @@ class PostsController < ApplicationController
             p @post.images[0].filename
             p "_______________________________"
           end
-        # algo here
+        # algorithm here
+        @post.sounds << "/sounds/ambient1.mp3"
+        gon.file = @post.sounds.first
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
       else
        format.html { render action: 'new' }
