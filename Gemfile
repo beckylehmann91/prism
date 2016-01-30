@@ -5,8 +5,8 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.5'
 
 gem 'piet'
-gem 'piet-binary'
-gem 'rmagick'
+# gem 'piet-binary'
+# gem 'rmagick'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.15'
 # Use SCSS for stylesheets
