@@ -172,19 +172,20 @@
   end
 
   def melody
-    Sound.find_by(luminence: self.measure_luminence)
+    Sound.find_by(luminence: self.measure_luminence, color: self.color_variety, role: "melody")
   end
 
+  # color variety
   def pad
-    Sound.find_by(contrast: self.contrast)
+    Sound.find_by(color: self.color_variety, role: "pad")
   end
 
-  def color
-    Sound.find_by(color: self.color_variety)
+  def percussion
+    Sound.find_by(contrast: self.contrast, role: "percussion")
   end
 
   def sound_set
-    [self.melody, self.pad, self.color]
+    [self.melody, self.pad, self.percussion]
   end
 
   def sound_urls
