@@ -45,10 +45,11 @@ ActiveRecord::Schema.define(version: 20160130000449) do
     t.string   "filename"
     t.integer  "luminence"
     t.integer  "contrast"
-    t.integer  "color"
+    t.integer  "color_dominance"
+    t.integer  "color_variety"
     t.string   "role"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   add_foreign_key "sound_tags", "images"
