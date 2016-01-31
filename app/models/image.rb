@@ -48,6 +48,7 @@
   end
 
   def create_rows
+    self.h_w
     array = self.convert_color_to_array
     array.each_slice(self.width).to_a
   end
@@ -115,7 +116,6 @@
   # get contrast ratio
   def contrast
     contrast = self.luminence.sort.reverse!
-    p contrast
     contrast = ((contrast.first + 0.05)/(contrast.last + 0.05))
 
     if contrast >= 5.5
@@ -143,6 +143,26 @@
 
   def color_variety
     (((self.convert_to_canvas.palette.length).to_f/(self.height * self.width).to_f) * 10).ceil
+  end
+
+  def melody
+    Sound.find_by(luminence: self.measure_luminence)
+  end
+
+  def pad
+    Sound.find_by(contrast: self.contrast)
+  end
+
+  def color
+    Sound.find_by(color_variety: self.color_variety)
+  end
+
+  def sound_set
+    [self.melody, self.pad, self.color]
+  end
+
+  def sound_urls
+    self.sound_set.map { |sound| sound.filename }
   end
 end
 

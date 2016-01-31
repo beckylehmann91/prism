@@ -2,26 +2,27 @@ $(function() {
 
   soundManager.setup({
     onready: function() {
+      var FIRST_ELEMENT = 0
       var music = []
+      var length = gon.sounds[FIRST_ELEMENT]
 
       // create sound variables
-      for (var i = 0; i < gon.sounds.length; i++) {
+      for (var i = 0; i < length; i++) {
         music[i] = soundManager.createSound({
-          url: gon.sounds[i],
+          url: gon.sounds[FIRST_ELEMENT][i],
         });
       };
 
       // play songs
-      console.log(music)
       $('div #play').on('click', function() {
-        for(var i = 0; i < gon.sounds.length; i++){
+        for(var i = 0; i < length; i++){
           music[i].play();
         }
       });
 
       // stop playback
       $('div #stop').on('click', function() {
-        for(var i = 0; i < gon.sounds.length; i++){
+        for(var i = 0; i < length; i++){
           music[i].stop();
         }
       });
