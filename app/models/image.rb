@@ -145,6 +145,32 @@
     (((self.convert_to_canvas.palette.length).to_f/(self.height * self.width).to_f) * 10).ceil
   end
 
+  def color_dominance
+    red = 0
+    green = 0
+    blue = 0
+    array = self.average_attributes
+    array.each do |row|
+      red += row[0]
+      green += row[1]
+      blue += row[2]
+    end
+
+    if red > green && red > blue
+      return 3
+    elsif green > blue && green > red
+      return 2
+    elsif blue > green && blue > red
+      return 1
+    elsif red == green
+      return 3
+    elsif blue == green
+      return 1
+    else
+      return 1
+    end
+  end
+
   def melody
     Sound.find_by(luminence: self.measure_luminence)
   end
