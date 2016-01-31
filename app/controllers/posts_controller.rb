@@ -9,9 +9,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @images = @post.images.all
-    @image_sound_urls = @post.images.map { |image| image.sound_urls }
-    p @image_sound_urls
-    gon.sounds = @image_sound_urls # return array of images
+    gon.sounds = @post.images.map { |image| image.sound_urls } # return array of sounds paths/image
   end
 
    def new

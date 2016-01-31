@@ -154,7 +154,7 @@
   end
 
   def color
-    Sound.find_by(color_variety: self.color_variety)
+    Sound.find_by(color: self.color_variety)
   end
 
   def sound_set
