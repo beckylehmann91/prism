@@ -1,3 +1,4 @@
+Sound.create(filename: "/sounds/punch.mp3", luminence: 5, color: 1, contrast: 1)
 Sound.create(filename: "/sounds/Academy_All.mp3", luminence: 2, color: 3, contrast: 1)
 Sound.create(filename: "/sounds/Acoustic_Guitar_1_CMa_100.mp3", luminence: 5, color: 5, contrast: 1)
 Sound.create(filename: "/sounds/Acoustic_Guitar_1_CMa_100.mp3", luminence: 5, color: 6, contrast: 1)
