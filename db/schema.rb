@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 20160130000449) do
     t.integer  "luminence"
     t.integer  "contrast"
     t.integer  "color"
-    t.string   "roll"
+    t.string   "role"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
