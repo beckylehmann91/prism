@@ -4,12 +4,12 @@ $(function() {
     onready: function() {
       var music = []
 
-      console.log("length" + gon.sounds.length);
+      console.log("length" + gon.sounds[0].length);
 
       // create sound variables
-      for (var i = 0; i < gon.sounds.length; i++) {
+      for (var i = 0; i < gon.sounds[0].length; i++) {
         music[i] = soundManager.createSound({
-          url: gon.sounds[0],
+          url: gon.sounds[0][i],
         });
       };
 

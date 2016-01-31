@@ -116,7 +116,6 @@
   # get contrast ratio
   def contrast
     contrast = self.luminence.sort.reverse!
-    p contrast
     contrast = ((contrast.first + 0.05)/(contrast.last + 0.05))
 
     if contrast >= 5.5
@@ -147,7 +146,7 @@
   end
 
   def melody
-    Sound.find_by(luminence: self.luminence)
+    Sound.find_by(luminence: self.measure_luminence)
   end
 
   def pad
@@ -158,12 +157,12 @@
     Sound.find_by(color_variety: self.color_variety)
   end
 
-  def sounds
+  def sound_set
     [self.melody, self.pad, self.color]
   end
 
   def sound_urls
-    self.sounds.map { |sound| sound.filename }
+    self.sound_set.map { |sound| sound.filename }
   end
 end
 
