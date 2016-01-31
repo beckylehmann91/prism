@@ -4,7 +4,7 @@ class CreateSounds < ActiveRecord::Migration
       t.string :filename
       t.integer :luminence
       t.integer :contrast
-      t.integer :color_variety
+      t.integer :color
 
       t.timestamps null: false
     end
