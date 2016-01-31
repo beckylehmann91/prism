@@ -8,6 +8,7 @@ $(function() {
       for (var i = 0; i < gon.sounds.length; i++) {
         music[i] = soundManager.createSound({
           url: gon.sounds[i],
+          loops: 3,
         });
       };
 
@@ -17,6 +18,7 @@ $(function() {
         for(var i = 0; i < gon.sounds.length; i++){
           music[i].play();
         }
+
       });
 
       // stop playback
