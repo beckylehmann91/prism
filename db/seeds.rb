@@ -40,6 +40,9 @@ Sound.create(filename: "/sounds/melody100_harp.mp3", luminence: 10, color_domina
 
 
 # MELODY: LUMINENCE 9
+Sound.create(filename: "/sounds/Flute_2_AMi_100.mp3", luminence: 9, color: 1, role: "melody")
+Sound.create(filename: "/sounds/Flute_1_GMa_100.mp3", luminence: 9, color: 2, role: "melody")
+
 # MELODY: LUMINENCE 10
 
 # Sound.create(filename: "/sounds/ambient1.mp3", luminence: 3, color: 7, contrast: 1)
