@@ -8,8 +8,8 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    gon.sounds = sounds(@post) # return array of sounds
     @images = @post.images.all
+    gon.sounds = @post.images.map { |image| image.sound_urls } # return array of sounds paths/image
   end
 
    def new
@@ -18,9 +18,9 @@ class PostsController < ApplicationController
    end
 
   def create
-     @post = Post.new(post_params)
+    @post = Post.new(post_params)
 
-     respond_to do |format|
+    respond_to do |format|
       if @post.save
         p params[:images]['filename']
          params[:images]['filename'].each do |a|
@@ -29,12 +29,9 @@ class PostsController < ApplicationController
             p @post.images[0].filename
             p "_______________________________"
           end
-        # algorithm here
-        # put below in a method but create three sounds objects
-        @post.sounds << Sound.create(filename: "/sounds/synth.mp3")
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
       else
-       format.html { render action: 'new' }
+        format.html { render action: 'new' }
       end
     end
   end

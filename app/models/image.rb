@@ -1,8 +1,12 @@
  class Image < ActiveRecord::Base
   mount_uploader :filename, FileUploader
   belongs_to :post
-  has_many :colors
+  has_many :sound_tags
+  has_many :sounds, through: :sound_tags
 
+  before_save :h_w
+
+  # gets image path
   def file_path
     self.filename.file.file
   end
@@ -17,11 +21,13 @@
     self.width = canvas.width
   end
 
+  # calc height and width of image
   def h_w
     self.image_height
     self.image_width
   end
 
+  # convert to canvas object (all image colors)
   def convert_to_canvas
     file_path = self.file_path
     image = ChunkyPNG::Image.from_file(file_path)
@@ -42,10 +48,12 @@
   end
 
   def create_rows
+    self.h_w
     array = self.convert_color_to_array
     array.each_slice(self.width).to_a
   end
 
+  # sum all RGB values in a row
   def transpose_rows
     array = self.create_rows
     array.map do |row|
@@ -53,6 +61,7 @@
     end
   end
 
+  # take sum and divide by width of image
   def sum_attributes
     transposed_array = self.transpose_rows
     transposed_array.map do |row|
@@ -71,13 +80,25 @@
     end
   end
 
+  # take row and each RGB value and calculate luminence
   def luminence
     averages = self.average_attributes
+    luminence_values = []
     averages.map do |row|
-      (row[0] * 0.2126) + (row[1] * 0.7152) + (row[2] * 0.0722)
+      luminence_values << (row[0] * 0.2126) + (row[1] * 0.7152) + (row[2] * 0.0722)
     end
+    luminence_values
+    # length = luminence_values.length
+    # return ((((luminence_values.reduce(:+))/length)/ 255) * 10).ceil
   end
 
+  def measure_luminence
+    luminence = self.luminence
+    length = luminence.length
+    return ((((luminence.reduce(:+))/length)/ 255) * 10).ceil
+  end
+
+  # number of color occurances
   def count_occurrences
     array = self.convert_color_to_array
     occurrences = {}
@@ -92,7 +113,87 @@
     end
   end
 
+  # get contrast ratio
+  def contrast
+    contrast = self.luminence.sort.reverse!
+    contrast = ((contrast.first + 0.05)/(contrast.last + 0.05))
+
+    if contrast >= 5.5
+      return 10
+    elsif contrast >= 5 && contrast < 5.5
+      return 9
+    elsif contrast >= 4.5 && contrast < 5
+      return 8
+    elsif contrast >= 4 && contrast < 4.5
+      return 7
+    elsif contrast >= 3.5 && contrast < 4
+      return 6
+    elsif contrast >= 3 && contrast < 3.5
+      return 5
+    elsif contrast >= 2.5 && contrast < 3
+      return 4
+    elsif contrast >= 2 && contrast < 2.5
+      return 3
+    elsif contrast >= 1.5 && contrast < 2
+      return 2
+    else return 1
+    end
+
+  end
+
+  def color_variety
+    (((self.convert_to_canvas.palette.length).to_f/(self.height * self.width).to_f) * 10).ceil
+  end
+
+  def color_dominance
+    red = 0
+    green = 0
+    blue = 0
+    array = self.average_attributes
+    array.each do |row|
+      red += row[0]
+      green += row[1]
+      blue += row[2]
+    end
+
+    if red > green && red > blue
+      return 3
+    elsif green > blue && green > red
+      return 2
+    elsif blue > green && blue > red
+      return 1
+    elsif red == green
+      return 3
+    elsif blue == green
+      return 1
+    else
+      return 1
+    end
+  end
+
+  def melody
+    Sound.find_by(luminence: self.measure_luminence, color: self.color_variety, role: "melody")
+  end
+
+  # color variety
+  def pad
+    Sound.find_by(color: self.color_variety, role: "pad")
+  end
+
+  def percussion
+    Sound.find_by(contrast: self.contrast, role: "percussion")
+  end
+
+  def sound_set
+    [self.melody, self.pad, self.percussion]
+  end
+
+  def sound_urls
+    self.sound_set.map { |sound| sound.filename }
+  end
 end
+
+
 
 
 
