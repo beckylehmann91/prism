@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :images
   resources :posts
+  resources :users, :except => [:index, :destroy]
 
   root 'landing#index'
   get '/login' => 'sessions#new', as: 'login'

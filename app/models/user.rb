@@ -1,3 +1,5 @@
+require 'bcrypt'
+
 class User < ActiveRecord::Base
   has_many :posts
   has_many :images, through: :posts
