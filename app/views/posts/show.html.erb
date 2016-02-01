@@ -1,26 +1,47 @@
-<p id="notice"><%= notice %></p>
+<div class="post-show text-center">
+  <h1><%= @post.title %></h1>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
-
-<% @images.each do |p| %>
-  <%= image_tag p.filename_url, :class =>"photo" %>
-  <%= link_to "Edit Attachment", edit_image_path(p) %>
-<% end %>
-<div>
-  <a href="#" id="play">play</a>
-  <a href="#" id="stop">stop</a>
-  <a href="#" id="pause">pause</a>
-</div>
-<div>
-  <% @images.each do |image| %>
-    <p>
-      <span></span>
-    </p>
+  <% if notice %>
+    <p id="notice"><%= notice %></p>
   <% end %>
+
+  <div class="post-main">
+
+    <% @images.each do |p| %>
+      <div class="each-photo">
+        <%= image_tag p.filename_url, :class =>"photo pic-shadow" %>
+        <!-- <%= link_to "Edit Attachment", edit_image_path(p) %> -->
+      </div>
+    <% end %>
+
+    <div class="audio-controls">
+      <ul>
+        <li><a href="#" id="play">play</a></li>
+        <li><a href="#" id="stop">stop</a></li>
+        <li><a href="#" id="pause">pause</a></li>
+      </ul>
+    </div>
+
+    <div class="matrix">
+      <h4>Sound Matrix</h4>
+      <ul>
+        <li>Luminence: <%= @images.first.measure_luminence %></li>
+        <li>Dominant color: </li>
+        <li>Contrast: <%= @images.first.contrast %> </li>
+      </ul>
+    </div>
+
+    <div>
+      <% @images.each do |image| %>
+        <p>
+          <span></span>
+        </p>
+      <% end %>
+    </div>
+
+    <p><%= link_to 'Edit', edit_post_path(@post) %> |
+    <%= link_to 'Back', posts_path %></p>
+
+  </div>
 </div>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
