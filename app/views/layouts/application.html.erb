@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<% unless @navigation == false%>
+<% unless @navigation == false %>
   <%= render '/layouts/navi' %>
 <% end %>
 
@@ -19,8 +19,9 @@
 
 </div>
 
-<%= render '/layouts/footer' %>
-
+<% unless @navigation == false %>
+  <%= render '/layouts/footer' %>
+<% end %>
 
 </body>
 </html>
