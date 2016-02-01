@@ -14,6 +14,8 @@ gem 'pg', '~> 0.15'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 
+# amazon s3 dependencies
+gem 'aws-sdk', '< 2'
 gem 'carrierwave_direct'
 gem 'fog'
 # Use Uglifier as compressor for JavaScript assets
