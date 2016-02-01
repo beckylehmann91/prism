@@ -2,6 +2,14 @@
 
 <h1>Listing Posts</h1>
 
+<div id="img-carousel" class="owl-carousel">
+  <% @posts.each do |post| %>
+    <div class="item">
+      <a href=<%= post_path(post) %>><img src=<%= post.images.first.filename %>></a>
+    </div>
+  <% end %>
+</div>
+
 <table>
   <thead>
     <tr>
@@ -21,7 +29,7 @@
     <% end %>
   </tbody>
 </table>
-
 <br>
+
 
 <%= link_to 'New Post', new_post_path %>
