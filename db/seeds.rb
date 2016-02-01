@@ -75,3 +75,25 @@ Sound.create(filename: "/sounds/perc100-007.mp3", role: "percussion", contrast: 
 Sound.create(filename: "/sounds/perc100-008.mp3", role: "percussion", contrast: 8)
 Sound.create(filename: "/sounds/perc100-009.mp3", role: "percussion", contrast: 9)
 Sound.create(filename: "/sounds/perc100-0010.mp3", role: "percussion", contrast: 10)
+
+
+
+# Image files
+# post1 = Post.create!(title: "chicago")
+# post2 = Post.create!(title: "night")
+# post3 = Post.create!(title: "ocean")
+# post4 = Post.create!(title: "parade")
+# post5 = Post.create!(title: "parrots")
+# post6 = Post.create!(title: "sunset")
+# post7 = Post.create!(title: "zebra")
+
+# post1.images << Image.create(filename: "/seedImages/chicago.png")
+# post2.images << Image.create(filename: "/seedImages/nightSky.png")
+# post3.images << Image.create(filename: "/seedImages/ocean.png")
+# post4.images << Image.create(filename: "/seedImages/parade.png")
+# post5.images << Image.create(filename: "/seedImages/parrots.png")
+# post6.images << Image.create(filename: "/seedImages/sunset.png")
+# post7.images << Image.create(filename: "/seedImages/zebra.png")
+
+
+
