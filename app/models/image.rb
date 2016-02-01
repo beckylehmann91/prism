@@ -8,7 +8,7 @@
 
   # gets image path
   def file_path
-    self.filename.file.file
+    self.filename.file.path
   end
 
   def image_height
