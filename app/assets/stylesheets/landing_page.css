@@ -212,3 +212,18 @@ body {
   padding: 0;
 }
 
+#app_name {
+  margin: auto;
+  font-size: 10em;
+  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  letter-spacing: 1.2em;
+  display: inline-block;
+  text-align: center;
+  vertical-align: center;
+  background: rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  opacity: 0.6;
+}
