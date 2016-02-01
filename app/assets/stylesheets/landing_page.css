@@ -180,6 +180,7 @@ p {
   width: 1300px;
   top: 0;
   left: 0;
+  opacity: 0.8;
 }
 
 #photoShow div {
