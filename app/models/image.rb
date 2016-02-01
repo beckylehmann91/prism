@@ -95,7 +95,7 @@
   def measure_luminence
     luminence = self.luminence
     length = luminence.length
-    return ((((luminence.reduce(:+))/length)/ 255) * 10).ceil
+    self.lum = ((((luminence.reduce(:+))/length)/ 255) * 10).ceil
   end
 
   # number of color occurances
@@ -119,30 +119,41 @@
     contrast = ((contrast.first + 0.05)/(contrast.last + 0.05))
 
     if contrast >= 5.5
-      return 10
+      self.con = 10
+
     elsif contrast >= 5 && contrast < 5.5
-      return 9
+      self.con = 9
+
     elsif contrast >= 4.5 && contrast < 5
-      return 8
+      self.con = 8
+
     elsif contrast >= 4 && contrast < 4.5
-      return 7
+      self.con = 7
+
     elsif contrast >= 3.5 && contrast < 4
-      return 6
+      self.con = 6
+
     elsif contrast >= 3 && contrast < 3.5
-      return 5
+      self.con = 5
+
     elsif contrast >= 2.5 && contrast < 3
-      return 4
+      self.con = 4
+
     elsif contrast >= 2 && contrast < 2.5
-      return 3
+      self.con = 3
+
     elsif contrast >= 1.5 && contrast < 2
-      return 2
-    else return 1
+      self.con = 2
+
+    else
+      self.con = 1
+
     end
 
   end
 
   def color_variety
-    (((self.convert_to_canvas.palette.length).to_f/(self.height * self.width).to_f) * 10).ceil
+    self.var = (((self.convert_to_canvas.palette.length).to_f/(self.height * self.width).to_f) * 10).ceil
   end
 
   def color_dominance

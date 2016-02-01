@@ -5,6 +5,9 @@ class CreateImages < ActiveRecord::Migration
       t.integer :height #in pixels
       t.integer :width #in pixels
       t.string :filename
+      t.integer :lum
+      t.integer :con
+      t.integer :var
 
       t.timestamps null: false
     end
