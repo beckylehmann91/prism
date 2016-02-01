@@ -132,4 +132,20 @@ body {
   text-shadow: 1px 1px 4px black;
 }
 
+.new_post input[type="text"] {
+  width:200px;
+}
+
+.new_post input {
+  margin: 10px;
+  font-family: Impact;
+}
+
+.new_post input[type='submit'] {
+  padding: 10px 15px;
+  border-radius: 15px;
+  background-color: orange;
+  color: white;
+  font-size: 1.1em;
+}
 
