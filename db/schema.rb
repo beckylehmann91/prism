@@ -21,6 +21,9 @@ ActiveRecord::Schema.define(version: 20160201161742) do
     t.integer  "height"
     t.integer  "width"
     t.string   "filename"
+    t.integer  "lum"
+    t.integer  "con"
+    t.integer  "var"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
