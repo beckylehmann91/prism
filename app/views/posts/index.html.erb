@@ -20,6 +20,13 @@
       </tr>
     <% end %>
   </tbody>
+
+  <div id="img-carousel">
+    <% @posts.each do |post| %>
+      <a href=<%= post_path(post) %>><img src=<%= post.images.first.filename %>></a>
+    <% end %>
+  </div>
+
 </table>
 
 <br>
