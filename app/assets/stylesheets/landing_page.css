@@ -78,15 +78,17 @@ li {
   font-size: 1em;
 }
 
+/* top left wedge */
 .polygon_top:nth-child(1) {
-  border-bottom: 30px solid red;
+  border-bottom: 30px solid rgba(0,0,0, 0.5);
   right: 0;
   transform: translateX(-30px) translateY(-15px);
 }
 
+/* top left wedge --> expanded*/
 .polygon_top:nth-child(1):hover {
   border-radius: 4px 0 0 4px;
-  border-left: 18px solid red;
+  border-left: 18px solid rgba(0,0,0, 0.55);
   width: 120px;
   z-index: 100;
 }
@@ -94,20 +96,23 @@ li {
   line-height: 30px;
 }
 
+/* bottom middle wedge */
 .polygon_top:nth-child(2) {
-  border-bottom: 30px solid gray;
+  border-bottom: 30px solid rgba(70, 70, 70, 0.25);
   transform: translateX(12px) translateY(15px);
 }
 
+/* top right wedge */
 .polygon_top:nth-child(3) {
-  border-bottom: 30px solid blue;
+  border-bottom: 30px solid rgba(250, 250, 250, 0.5);
   left: 0;
   transform: translateX(30px) translateY(-15px);
 }
 
+/* top right wedge --> expanded */
 .polygon_top:nth-child(3):hover {
   border-radius: 0 4px 4px 0;
-  border-right: 18px solid blue;
+  border-right: 18px solid rgba(250, 250, 250, 0.5);
   width: 120px;
   z-index: 100;
 }
@@ -117,15 +122,17 @@ li {
   line-height: 30px;
 }
 
+/* bottom left wedge */
 .polygon_bottom:nth-child(4) {
-  border-top: 30px solid black;
+  border-top: 30px solid rgba(30, 30, 30, 0.5);
   right: 0;
   transform: translateX(-30px) translateY(15px);
 }
 
+/* bottom left wedge --> expanded */
 .polygon_bottom:nth-child(4):hover {
   border-radius: 4px 0 0 4px;
-  border-left: 18px solid black;
+  border-left: 18px solid rgba(30, 30, 30, 0.5);
   width: 120px;
   z-index: 100;
 }
@@ -136,19 +143,22 @@ li {
   margin-top: -30px;
 }
 
+/*top middle wedge */
 .polygon_bottom:nth-child(5) {
-  border-top: 30px solid green;
+  border-top: 30px solid rgba(20, 20, 20, 0.4);
   transform: translateX(12px) translateY(-15px);
 }
 
+/* bottom right wedge */
 .polygon_bottom:nth-child(6) {
-  border-top: 30px solid white;
+  border-top: 30px solid rgba(150, 150, 150, 0.4);
   transform: translateX(30px) translateY(15px);
 }
 
-.polygon_bottom:nth-child(6):hover {
+/* bottom right wedge --> expanded*/
+.polygon_bottom:nth-child(6):hover {`
   border-radius: 0 4px 4px 0;
-  border-right: 18px solid white;
+  border-right: 18px solid rgba(150, 150, 150, 0.4);
   width: 120px;
   z-index: 100;
 }
@@ -157,12 +167,4 @@ li {
   text-align: right;
   line-height: 30px;
   margin-top: -30px;
-}
-
-p{
-  color: #666;
-  cursor:default;
-  font-size:0.8em;
-  margin-top:5em;
-  user-select: none;
 }
