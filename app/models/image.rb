@@ -168,17 +168,17 @@
     end
 
     if red > green && red > blue
-      return 3
+      self.color_dom = 3
     elsif green > blue && green > red
-      return 2
+      self.color_dom = 2
     elsif blue > green && blue > red
-      return 1
+      self.color_dom = 1
     elsif red == green
-      return 3
+      self.color_dom = 3
     elsif blue == green
-      return 1
+      self.color_dom = 1
     else
-      return 1
+      self.color_dom = 1
     end
   end
 
