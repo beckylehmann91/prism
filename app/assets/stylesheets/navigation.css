@@ -1,0 +1,23 @@
+/*=================================== container
+*/
+.navi-hex {
+  position: absolute;
+  top: 6%;
+  left: 50%;
+  margin-top: -30px;
+  margin-left: -30px;
+  width: 60px;
+  transform-origin: center;
+  transform: scale(1.00005); /* hack Firefox smooth edge */
+}
+
+.polygon_top:nth-child(1):hover > a,
+.polygon_top:nth-child(3):hover > a,
+.polygon_bottom:nth-child(4):hover > a,
+.polygon_bottom:nth-child(6):hover > a {
+  color: #00ffff;
+  font-size: 1em;
+  font-weight: bold;
+}
+/*=================================== top and bottom triangle
+*/

@@ -8,6 +8,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<% if root_url %>
+  <%= render '/layouts/navi' %>
+<% end %>
 
 <%= yield %>
 
