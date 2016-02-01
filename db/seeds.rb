@@ -74,7 +74,8 @@ Sound.create(filename: "/sounds/perc100-006.mp3", role: "percussion", contrast: 
 Sound.create(filename: "/sounds/perc100-007.mp3", role: "percussion", contrast: 7)
 Sound.create(filename: "/sounds/perc100-008.mp3", role: "percussion", contrast: 8)
 Sound.create(filename: "/sounds/perc100-009.mp3", role: "percussion", contrast: 9)
-Sound.create(filename: "/sounds/perc100-0010.mp3", role: "percussion", contrast: 10)
+Sound.create(filename: "/sounds/perc100-010.mp3", role: "percussion", contrast: 10)
+
 
 
 
@@ -94,6 +95,3 @@ Sound.create(filename: "/sounds/perc100-0010.mp3", role: "percussion", contrast:
 # post5.images << Image.create(filename: "/seedImages/parrots.png")
 # post6.images << Image.create(filename: "/seedImages/sunset.png")
 # post7.images << Image.create(filename: "/seedImages/zebra.png")
-
-
-
