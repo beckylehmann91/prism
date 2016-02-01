@@ -36,6 +36,7 @@ li {
   margin-top: -30px;
   margin-left: -30px;
   width: 60px;
+  z-index: 999999;
   transform-origin: center;
   transform: scale(4.00005); /* hack Firefox smooth edge */
 }
@@ -159,10 +160,43 @@ li {
   margin-top: -30px;
 }
 
-p{
+p {
   color: #666;
   cursor:default;
   font-size:0.8em;
   margin-top:5em;
   user-select: none;
+}
+
+#photoShow {
+/*  height: 100%;
+  width: 100%;*/
+  position: relative;
+  margin: 0 auto;
+}
+
+#photoShow div img {
+  height: 900px;
+  width: 1300px;
+  top: 0;
+  left: 0;
+}
+
+#photoShow div {
+  position: absolute;
+  left: 0;
+  z-index: 0;
+}
+
+#photoShow div.current {
+  z-index: 2;
+}
+
+#photoShow div.previous {
+  z-index: 1;
+}
+
+body {
+  margin: 0;
+  padding: 0;
 }
