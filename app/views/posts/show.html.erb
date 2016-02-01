@@ -25,9 +25,10 @@
     <div class="matrix">
       <h4>Sound Matrix</h4>
       <ul>
-        <li>Luminence: <%= @images.first.measure_luminence %></li>
-        <li>Dominant color: </li>
-        <li>Contrast: <%= @images.first.contrast %> </li>
+        <li>Luminence: <%= @images.first.lum %></li>
+        <li>Color variety: <%= @images.first.var %> </li>
+        <li>Contrast: <%= @images.first.con %> </li>
+        <li>Dominant color: <%= @images.first.color_dom %> </li>
       </ul>
     </div>
 

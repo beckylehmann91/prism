@@ -4,7 +4,7 @@
   has_many :sound_tags
   has_many :sounds, through: :sound_tags
 
-  before_save :h_w
+  before_save :h_w, :measure_luminence, :contrast, :color_variety, :color_dominance
 
   # gets image path
   def file_path
@@ -183,16 +183,16 @@
   end
 
   def melody
-    Sound.find_by(luminence: self.measure_luminence, color_dominance: self.color_dominance, role: "melody")
+    Sound.find_by(luminence: self.lum, color_dominance: self.color_dom, role: "melody")
   end
 
   # color variety
   def pad
-    Sound.find_by(color_variety: self.color_variety, role: "pad")
+    Sound.find_by(color_variety: self.var, role: "pad")
   end
 
   def percussion
-    Sound.find_by(contrast: self.contrast, role: "percussion")
+    Sound.find_by(contrast: self.con, role: "percussion")
   end
 
   def sound_set
