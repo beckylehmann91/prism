@@ -11,3 +11,8 @@ feature "Logged in features" do
     end
 
     click_button 'login'
+
+    expect(page).to have_content 'logout'
+
+  end
+end
