@@ -4,7 +4,7 @@
   has_many :sound_tags
   has_many :sounds, through: :sound_tags
 
-  before_save :h_w
+  before_save :h_w, :measure_luminence, :contrast, :color_variety, :color_dominance
 
   # gets image path
   def file_path
@@ -95,7 +95,7 @@
   def measure_luminence
     luminence = self.luminence
     length = luminence.length
-    return ((((luminence.reduce(:+))/length)/ 255) * 10).ceil
+    self.lum = ((((luminence.reduce(:+))/length)/ 255) * 10).ceil
   end
 
   # number of color occurances
@@ -119,30 +119,41 @@
     contrast = ((contrast.first + 0.05)/(contrast.last + 0.05))
 
     if contrast >= 5.5
-      return 10
+      self.con = 10
+
     elsif contrast >= 5 && contrast < 5.5
-      return 9
+      self.con = 9
+
     elsif contrast >= 4.5 && contrast < 5
-      return 8
+      self.con = 8
+
     elsif contrast >= 4 && contrast < 4.5
-      return 7
+      self.con = 7
+
     elsif contrast >= 3.5 && contrast < 4
-      return 6
+      self.con = 6
+
     elsif contrast >= 3 && contrast < 3.5
-      return 5
+      self.con = 5
+
     elsif contrast >= 2.5 && contrast < 3
-      return 4
+      self.con = 4
+
     elsif contrast >= 2 && contrast < 2.5
-      return 3
+      self.con = 3
+
     elsif contrast >= 1.5 && contrast < 2
-      return 2
-    else return 1
+      self.con = 2
+
+    else
+      self.con = 1
+
     end
 
   end
 
   def color_variety
-    (((self.convert_to_canvas.palette.length).to_f/(self.height * self.width).to_f) * 10).ceil
+    self.var = (((self.convert_to_canvas.palette.length).to_f/(self.height * self.width).to_f) * 10).ceil
   end
 
   def color_dominance
@@ -157,31 +168,31 @@
     end
 
     if red > green && red > blue
-      return 3
+      self.color_dom = 3
     elsif green > blue && green > red
-      return 2
+      self.color_dom = 2
     elsif blue > green && blue > red
-      return 1
+      self.color_dom = 1
     elsif red == green
-      return 3
+      self.color_dom = 3
     elsif blue == green
-      return 1
+      self.color_dom = 1
     else
-      return 1
+      self.color_dom = 1
     end
   end
 
   def melody
-    Sound.find_by(luminence: self.measure_luminence, color_dominance: self.color_dominance, role: "melody")
+    Sound.find_by(luminence: self.lum, color_dominance: self.color_dom, role: "melody")
   end
 
   # color variety
   def pad
-    Sound.find_by(color_variety: self.color_variety, role: "pad")
+    Sound.find_by(color_variety: self.var, role: "pad")
   end
 
   def percussion
-    Sound.find_by(contrast: self.contrast, role: "percussion")
+    Sound.find_by(contrast: self.con, role: "percussion")
   end
 
   def sound_set

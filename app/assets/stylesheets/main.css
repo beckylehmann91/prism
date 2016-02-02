@@ -1,4 +1,135 @@
+body {
+  margin: 0;
+  background-color: black;
+  font-family: Impact;
+}
+
 .photo {
-  width: 300px;
+  width: 400px;
   height: auto;
 }
+
+.main-container {
+  padding: 10px 0 50px;
+  margin: 0;
+  color: white;
+  background: url('/images/pixel-trans10-bkg.png');
+  background-size: cover;
+  min-height: 600px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.owl-carousel {
+  background: url('/images/pixel-trans10-bkg.png') no-repeat;
+  background-size: cover;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.pic-shadow {
+  box-shadow: 1px 3px 15px #fff;
+}
+
+.white-text {
+  color:white;
+}
+
+.tiny-pic {
+  width: auto;
+  height: 80px;
+  box-shadow: -1px 2px 8px rgba(255, 255, 255, 0.6);
+}
+
+.post-main {
+  padding-top: 15px;
+  width: 600px;
+  margin: 0 auto;
+}
+
+.each-photo img {
+  display:block;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.audio-controls ul {
+  list-style-type: none;
+}
+
+.audio-controls li {
+  display: inline;
+  margin-right: 15px;
+}
+
+.matrix h4 {
+  margin: 1.5em 0 1em;
+  font-size: 1.3em;
+}
+
+.matrix ul {
+  margin-bottom: 1.5em;
+}
+
+.matrix ul li {
+  margin: 0.5em 0;
+}
+
+.post-item {
+  display: inline-block;
+  padding: 8px 15px;
+  margin: 5px;
+  border: 2px solid white;
+  border-radius: 15px;
+}
+
+.post-item h4 {
+  background-color: rgba(255,255,255,0.4);
+  padding: 2px 0 4px;
+}
+
+.post-item h4 a {
+  color: white;
+}
+
+.post-item h4 a:hover {
+  color: orange;
+}
+
+.post-item p a {
+  color: white;
+}
+
+.post-item p a:visited {
+  color: orange;
+}
+
+.new-button-div {
+  padding-top: 25px;
+  margin: 0 auto;
+}
+
+/* yellow button on /posts to create new post */
+.new-button {
+  background-color: orange;
+  padding: 12px 20px;
+  border-radius: 18px;
+  box-shadow: -1px 1px 6px rgba(255, 255, 255, 0.5);
+  color: white;
+  text-shadow: 1px 1px 3px navy;
+}
+
+.footer {
+  height: 60px;
+  padding: 20px;
+  /*background-color: rgba(255, 255, 255, 0.6);*/
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.1));
+  box-shadow: 1px -3px 10px rgba(255, 255, 255, 0.1);
+}
+
+.footer h4 {
+  text-shadow: 1px 1px 4px black;
+}
+
+
