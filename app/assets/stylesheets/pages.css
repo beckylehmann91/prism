@@ -1,6 +1,13 @@
 body {
   font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
   text-transform: uppercase;
+  background: rgb(15, 15, 15);
+}
+
+.main-container {
+  background-image: url("/images/pixel-embed-trans-bkg.png");
+  background-size: cover;
+  background-repeat: none;
 }
 
 .prism {
