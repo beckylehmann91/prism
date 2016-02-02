@@ -1,5 +1,5 @@
  class Image < ActiveRecord::Base
-
+  belongs_to :user
   validates :post_id, presence: true
   # validates :height, presence: true
   # validates :width, presence: true

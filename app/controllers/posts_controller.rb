@@ -3,17 +3,25 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def index
-    @posts = Post.first(7)
+    if authenticated?
+      @posts = Post.first(7)
+    else
+      redirect_to '/login'
+    end
   end
 
   def show
     # @post = Post.find(params[:id])
-    if @post
-      @images = @post.images.all
-      gon.sounds = @post.images.map { |image| image.sound_urls } # return array of sounds paths/image
+    if authenticated?
+      if @post
+        @images = @post.images.all
+        gon.sounds = @post.images.map { |image| image.sound_urls } # return array of sounds paths/image
+      else
+        flash[:notice] = "Couldn't find post ID# #{params[:id]}"
+        redirect_to posts_path
+      end
     else
-      flash[:notice] = "Couldn't find post ID# #{params[:id]}"
-      redirect_to posts_path
+      redirect_to '/login'
     end
   end
 

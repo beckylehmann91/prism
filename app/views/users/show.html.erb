@@ -1,11 +1,14 @@
 <div class="new_post text-center">
 
   <h1>Profile</h1>
+  <h4>Your images</h4>
 
-  <% if @user.posts.count > 0 %>
-    <p>Yes, posts</p>
-  <% else %>
-    <p>No posts</p>
-  <% end %>
+  <div id="img-carousel" class="owl-carousel">
+    <% @user.posts.each do |post| %>
+    <div class="item">
+        <a href=<%= post_path(post) %>><img src=<%= post.images.first.filename.file.url %> class="pic-shadow"></a>
+      </div>
+    <% end %>
+  </div>
 
 </div>
