@@ -1,0 +1,42 @@
+body {
+  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  text-transform: uppercase;
+  background: rgb(15, 15, 15);
+}
+
+.main-container:before {
+  background-image: url("/images/pixel-embed-trans-bkg.png");
+  background-size: cover;
+  background-repeat: none;
+  opacity: 0.4;
+}
+
+.top-content {
+  z-index: 6;
+  p
+}
+
+.prism {
+  letter-spacing: 1.2em;
+  margin-right: -40px;
+  margin-top: 5%;
+}
+
+.new-button-div {
+  text-align: center;
+  margin: auto;
+}
+
+#img-carousel {
+  margin-top: 5%;
+  padding: 5%;
+}
+
+.owl-item {
+  height: 300px;
+  width: 500px;
+}
+
+.post-item {
+  min-width: 150px;
+}

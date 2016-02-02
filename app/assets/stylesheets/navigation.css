@@ -9,6 +9,7 @@
   width: 60px;
   transform-origin: center;
   transform: scale(1.00005); /* hack Firefox smooth edge */
+  z-index: 102;
 }
 
 .polygon_top:nth-child(1):hover > a,

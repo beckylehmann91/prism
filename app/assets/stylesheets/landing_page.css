@@ -178,14 +178,14 @@ p {
   user-select: none;
 }
 
-#photoShow {
+.photoShow {
 /*  height: 100%;
   width: 100%;*/
   position: relative;
   margin: 0 auto;
 }
 
-#photoShow div img {
+.photoShow div img {
   height: 900px;
   width: 1300px;
   top: 0;
@@ -193,17 +193,17 @@ p {
   opacity: 0.8;
 }
 
-#photoShow div {
+.photoShow div {
   position: absolute;
   left: 0;
   z-index: 0;
 }
 
-#photoShow div.current {
+.photoShow div.current {
   z-index: 2;
 }
 
-#photoShow div.previous {
+.photoShow div.previous {
   z-index: 1;
 }
 
