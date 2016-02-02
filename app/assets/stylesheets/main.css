@@ -139,7 +139,7 @@ body {
   text-shadow: 1px 1px 4px black;
 }
 
-.new_post input[type="text"] {
+.new_post input[type="text"], .edit_post input[type="text"] {
   width:200px;
 }
 
@@ -149,12 +149,16 @@ body {
   font-weight: 600;
 }
 
-.new_post input[type='submit'] {
+.new_post input[type='submit'], .edit_post input[type="submit"] {
   padding: 10px 15px;
   border-radius: 15px;
   background-color: orange;
   color: white;
   font-size: 1.1em;
   font-weight: 800;
+}
+
+.edit_post .actions {
+  margin: 10px 0;
 }
 
