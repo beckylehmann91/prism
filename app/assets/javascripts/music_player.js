@@ -17,6 +17,7 @@ $(function() {
       // loops playback infinitely
       function loopSound(music) {
         music.play({
+          onplay: function() { disablePlayButton() }, // disable link
           onfinish: function() {
             loopSound(music);       // callback function to repeat play
           }
@@ -32,7 +33,7 @@ $(function() {
 
       // stop playback
       $('div #stop').on('click', function() {
-        for(var i = 0; i < length; i++){
+        for(var i = 0; i < length; i++) {
           music[i].stop();
         }
       });
@@ -47,3 +48,7 @@ $(function() {
   });
 });
 
+// disables play button once clicked
+function disablePlayButton(){
+  $("#play").unbind();
+}
