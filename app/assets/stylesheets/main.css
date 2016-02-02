@@ -1,12 +1,7 @@
 body {
   margin: 0;
   background-color: black;
-  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-  text-transform: uppercase;
-}
-
-.prism {
-  letter-spacing: 1.2em;
+  font-family: 'Lato', sans-serif;
 }
 
 .photo {
@@ -15,7 +10,7 @@ body {
 }
 
 .main-container {
-  padding: 0;
+  padding: 10px 0 50px;
   margin: 0;
   color: white;
   background: url('/images/pixel-trans10-bkg.png');
@@ -55,7 +50,6 @@ body {
   padding-top: 15px;
   width: 600px;
   margin: 0 auto;
-  z-index: 100;
 }
 
 .each-photo img {
@@ -162,8 +156,4 @@ body {
   color: white;
   font-size: 1.1em;
   font-weight: 800;
-}
-
-.top_content {
-  z-index: 101;
 }
