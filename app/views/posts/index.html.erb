@@ -15,7 +15,7 @@
 <div class="post-main text-center white-text">
   <h3>Recent Prism Uploads</h3>
 
-  <% Post.last(1).each do |post| %>
+  <% Post.last(3).each do |post| %>
     <div class="post-item">
       <h4><%= link_to post.title, post %></h4>
       <a href="/posts/<%= post.id %>"><img src="<%= post.images.first.filename.file.url %>" class="tiny-pic"></a>
