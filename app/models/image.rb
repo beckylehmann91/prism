@@ -4,7 +4,7 @@
   validates :height, presence: true
   validates :width, presence: true
   validates :lum, presence: true
-  validtes :lum, numericality: true
+  validates :lum, numericality: true
   validates :con, presence: true
   validates :con, numericality: true
   validates :var, presence: true
