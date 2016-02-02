@@ -8,15 +8,36 @@ feature "Logged in features" do
   end
 
   scenario "Sign in with correct credentials" do
-    visit '/'
-    within("#login") do
-      fill_in 'Email', :with => 'dude@bro.com'
+    visit '/login'
+      fill_in 'Username', :with => 'Brad'
       fill_in 'Password', :with => 'password'
-    end
 
     click_button 'login'
 
     expect(page).to have_content 'Profile'
 
+  end
+end
+
+feature "Not Logged in features" do
+  before do
+
+  end
+  scenario "Not logged in going to posts/index" do
+    visit '/posts'
+
+    expect(page).to have_content 'Login'
+  end
+
+  scenario "Not logged in going to posts/show" do
+    visit '/posts/1'
+
+    expect(page).to have_content 'Login'
+  end
+
+  scenario "Not logged in going to posts/new" do
+  visit '/posts/new'
+
+  expect(page).to have_content 'Title'
   end
 end
