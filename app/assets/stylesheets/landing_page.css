@@ -157,7 +157,7 @@ li {
 }
 
 /* bottom right wedge --> expanded*/
-.polygon_bottom:nth-child(6):hover {`
+.polygon_bottom:nth-child(6):hover {
   border-radius: 0 4px 4px 0;
   border-right: 18px solid rgba(150, 150, 150, 0.4);
   width: 120px;
