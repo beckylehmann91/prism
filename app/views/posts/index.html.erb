@@ -7,7 +7,7 @@
 <div id="img-carousel" class="owl-carousel">
   <% @posts.each do |post| %>
     <div class="item">
-      <a href=<%= post_path(post) %>><img src=<%= post.images.first.filename %> class="pic-shadow"></a>
+      <a href=<%= post_path(post) %>><img src=<%= post.images.first.file_path %> class="pic-shadow"></a>
     </div>
   <% end %>
 </div>
