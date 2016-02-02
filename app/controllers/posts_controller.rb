@@ -34,11 +34,16 @@ class PostsController < ApplicationController
             p @post.images[0].filename
             p "_______________________________"
           end
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+        format.html { redirect_to @post, notice: 'A new sound image was created.' }
       else
         format.html { render action: 'new' }
       end
     end
+  end
+
+  def update
+    @post.update(title: params[:post][:title])
+    redirect_to post_path(@post)
   end
 
   def destroy
