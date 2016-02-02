@@ -5,7 +5,7 @@ class FileUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
-  include CarrierWaveDirect::Uploader
+  # include CarrierWaveDirect::Uploader
 
   process resize_to_fit: [250, 250] # resize image to 250 x 250
 
