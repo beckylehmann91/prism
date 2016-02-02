@@ -14,3 +14,24 @@ body {
 .back-drop {
   opacity: 0.5;
 }
+
+#black_background {
+/*  height: 100%;
+  width: 100%;*/
+  position: relative;
+  margin: 0 auto;
+}
+
+#black_background div img {
+  height: 900px;
+  width: 1300px;
+  top: 0;
+  left: 0;
+  opacity: 0.8;
+}
+
+#black_background div {
+  position: absolute;
+  left: 0;
+  z-index: 0;
+}

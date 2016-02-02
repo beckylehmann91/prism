@@ -1,4 +1,19 @@
  class Image < ActiveRecord::Base
+
+  validates :post_id, presence: true
+  # validates :height, presence: true
+  # validates :width, presence: true
+  # validates :lum, presence: true
+  # validates :lum, numericality: true
+  # validates :con, presence: true
+  # validates :con, numericality: true
+  # validates :var, presence: true
+  # validates :var, numericality: true
+  # validates :color_dom, presence: true
+  # validates :color_dom, numericality: true
+  # validates :filename, presence: true
+  # validates :filename, format: { with: /(.png)/, message: "only png format allowed"}
+
   mount_uploader :filename, FileUploader
   belongs_to :post
   has_many :sound_tags
@@ -8,7 +23,13 @@
 
   # gets image path
   def file_path
-    self.filename.file.url
+    if filename.file.respond_to?(:url)
+      filename.file.url
+    elsif filename.file.respond_to?(:path)
+      filename.file.path
+    else
+      "uh-oh"
+    end
   end
 
   def image_height
