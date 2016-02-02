@@ -1,13 +1,13 @@
 <h1 class="text-center">Prism</h1>
 
 <% if notice %>
-  <p id="notice"><%= notice %></p>
+  <h3 id="notice" class="text-center notice"><%= notice %></h3>
 <% end %>
 
 <div id="img-carousel" class="owl-carousel">
   <% @posts.each do |post| %>
     <div class="item">
-      <a href=<%= post_path(post) %>><img src=<%= post.images.first.file_path %> class="pic-shadow"></a>
+      <a href=<%= post_path(post) %>><img src=<%= post.images.first.filename.file.url %> class="pic-shadow"></a>
     </div>
   <% end %>
 </div>
@@ -18,7 +18,7 @@
   <% Post.last(3).each do |post| %>
     <div class="post-item">
       <h4><%= link_to post.title, post %></h4>
-      <a href="/posts/<%= post.id %>"><img src="<%= post.images.first.filename %>" class="tiny-pic"></a>
+      <a href="/posts/<%= post.id %>"><img src="<%= post.images.first.filename.file.url %>" class="tiny-pic"></a>
       <p><%= link_to 'Listen', post %></p>
       <!-- | <%= link_to 'Edit', edit_post_path(post) %> -->
        <!-- <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %> -->

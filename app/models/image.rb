@@ -23,7 +23,13 @@
 
   # gets image path
   def file_path
-    self.filename.file.url
+    if filename.file.respond_to?(:url)
+      filename.file.url
+    elsif filename.file.respond_to?(:path)
+      filename.file.path
+    else
+      "uh-oh"
+    end
   end
 
   def image_height

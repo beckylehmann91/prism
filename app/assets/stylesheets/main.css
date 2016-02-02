@@ -1,7 +1,7 @@
 body {
   margin: 0;
   background-color: black;
-  font-family: Impact;
+  font-family: 'Lato', sans-serif;
 }
 
 .photo {
@@ -34,6 +34,10 @@ body {
 
 .white-text {
   color:white;
+}
+
+.notice {
+  color: #8B008B;
 }
 
 .tiny-pic {
@@ -99,6 +103,8 @@ body {
 
 .post-item p a {
   color: white;
+  font-size: 1.2em;
+  font-weight: 600;
 }
 
 .post-item p a:visited {
@@ -118,6 +124,7 @@ body {
   box-shadow: -1px 1px 6px rgba(255, 255, 255, 0.5);
   color: white;
   text-shadow: 1px 1px 3px navy;
+  font-weight: 600;
 }
 
 .footer {
@@ -132,4 +139,22 @@ body {
   text-shadow: 1px 1px 4px black;
 }
 
+.new_post input[type="text"] {
+  width:200px;
+}
+
+.new_post input {
+  margin: 10px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 600;
+}
+
+.new_post input[type='submit'] {
+  padding: 10px 15px;
+  border-radius: 15px;
+  background-color: orange;
+  color: white;
+  font-size: 1.1em;
+  font-weight: 800;
+}
 
