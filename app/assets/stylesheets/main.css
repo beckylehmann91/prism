@@ -1,7 +1,7 @@
 body {
   margin: 0;
   background-color: black;
-  font-family: Impact;
+  font-family: 'Lato', sans-serif;
 }
 
 .photo {
@@ -99,6 +99,8 @@ body {
 
 .post-item p a {
   color: white;
+  font-size: 1.2em;
+  font-weight: 600;
 }
 
 .post-item p a:visited {
@@ -118,6 +120,7 @@ body {
   box-shadow: -1px 1px 6px rgba(255, 255, 255, 0.5);
   color: white;
   text-shadow: 1px 1px 3px navy;
+  font-weight: 600;
 }
 
 .footer {
@@ -138,7 +141,8 @@ body {
 
 .new_post input {
   margin: 10px;
-  font-family: Impact;
+  font-family: 'Lato', sans-serif;
+  font-weight: 600;
 }
 
 .new_post input[type='submit'] {
@@ -147,5 +151,6 @@ body {
   background-color: orange;
   color: white;
   font-size: 1.1em;
+  font-weight: 800;
 }
 
