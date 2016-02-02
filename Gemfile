@@ -62,5 +62,6 @@ group :development do
   gem 'spring'
 end
 
-gem 'pry'
-
+group :production do
+  gem 'rails_12factor'
+end
