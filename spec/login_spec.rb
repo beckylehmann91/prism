@@ -17,6 +17,17 @@ feature "Logged in features" do
     expect(page).to have_content 'Profile'
 
   end
+
+  scenario "Sign in with incorrect credentials" do
+    visit '/login'
+      fill_in 'Username', :with => "Joe"
+      fill_in 'Password', :with => "Schmore"
+
+      click_button 'login'
+
+      expect(page).to have_content "Username"
+
+    end
 end
 
 feature "Not Logged in features" do
