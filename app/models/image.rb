@@ -8,7 +8,7 @@
 
   # gets image path
   def file_path
-    self.filename.file.file
+    self.filename.file.url
   end
 
   def image_height
@@ -30,8 +30,8 @@
   # convert to canvas object (all image colors)
   def convert_to_canvas
     file_path = self.file_path
-    image = ChunkyPNG::Image.from_file(file_path)
-    image.save(file_path, :best_compression)
+    image = ChunkyPNG::Image.from_file(open(file_path))
+    image.save(open(file_path), :best_compression)
     image
   end
 

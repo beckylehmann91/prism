@@ -10,8 +10,8 @@ class FileUploader < CarrierWave::Uploader::Base
   process resize_to_fit: [250, 250] # resize image to 250 x 250
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
-  # storage :fog
+  # storage :file
+  storage :fog # store on aws s3
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
