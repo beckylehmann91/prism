@@ -37,13 +37,9 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        p params[:images]['filename']
-         params[:images]['filename'].each do |a|
-            @image = @post.images.create!(:filename => a)
-            p "_______________________________"
-            p @post.images[0].filename
-            p "_______________________________"
-          end
+        params[:images]['filename'].each do |a|
+          @image = @post.images.create!(:filename => a)
+        end
         format.html { redirect_to @post, notice: 'A new sound image was created.' }
       else
         format.html { render action: 'new' }
