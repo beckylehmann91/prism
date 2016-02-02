@@ -20,8 +20,6 @@
       <h4><%= link_to post.title, post %></h4>
       <a href="/posts/<%= post.id %>"><img src="<%= post.images.first.filename.file.url %>" class="tiny-pic"></a>
       <p><%= link_to 'Listen', post %></p>
-      <!-- | <%= link_to 'Edit', edit_post_path(post) %> -->
-       <!-- <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %> -->
     </div>
   <% end %>
   <div class="new-button-div">
