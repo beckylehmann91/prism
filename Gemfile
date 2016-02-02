@@ -16,7 +16,7 @@ gem 'sass-rails', '~> 5.0'
 
 # amazon s3 dependencies
 gem 'aws-sdk', '< 2'
-gem 'carrierwave_direct'
+# gem 'carrierwave_direct'
 gem 'fog'
 gem "figaro"
 # Use Uglifier as compressor for JavaScript assets
