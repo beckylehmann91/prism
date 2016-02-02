@@ -36,6 +36,10 @@ body {
   color:white;
 }
 
+.notice {
+  color: #8B008B;
+}
+
 .tiny-pic {
   width: auto;
   height: 80px;

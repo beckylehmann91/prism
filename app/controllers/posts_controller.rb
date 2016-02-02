@@ -7,9 +7,14 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
-    @images = @post.images.all
-    gon.sounds = @post.images.map { |image| image.sound_urls } # return array of sounds paths/image
+    # @post = Post.find(params[:id])
+    if @post
+      @images = @post.images.all
+      gon.sounds = @post.images.map { |image| image.sound_urls } # return array of sounds paths/image
+    else
+      flash[:notice] = "Couldn't find post ID# #{params[:id]}"
+      redirect_to posts_path
+    end
   end
 
    def new
@@ -43,7 +48,7 @@ class PostsController < ApplicationController
 
   private
   def set_post
-    @post = Post.find(params[:id])
+    @post = Post.find_by(id: params[:id])
   end
 
   def post_params
