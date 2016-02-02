@@ -1,1 +1,11 @@
-<h1>Profile</h1>
+<div class="new_post text-center">
+
+  <h1>Profile</h1>
+
+  <% if @user.posts.count > 0 %>
+    <p>Yes, posts</p>
+  <% else %>
+    <p>No posts</p>
+  <% end %>
+
+</div>

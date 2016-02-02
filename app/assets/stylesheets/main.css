@@ -139,17 +139,17 @@ body {
   text-shadow: 1px 1px 4px black;
 }
 
-.new_post input[type="text"], .edit_post input[type="text"] {
+.new_post input[type="text"], .edit_post input[type="text"], .new_post input[type="password"] {
   width:200px;
 }
 
-.new_post input {
+.new_post input, .new_user input {
   margin: 10px;
   font-family: 'Lato', sans-serif;
   font-weight: 600;
 }
 
-.new_post input[type='submit'], .edit_post input[type="submit"] {
+.new_post input[type='submit'], .edit_post input[type="submit"], .new_user input[type="submit"] {
   padding: 10px 15px;
   border-radius: 15px;
   background-color: orange;
