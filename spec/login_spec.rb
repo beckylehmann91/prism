@@ -1,3 +1,7 @@
+require "rails_helper"
+require 'capybara/rspec'
+require 'capybara/dsl'
+
 feature "Logged in features" do
   before do
     User.create(username: "Brad", password: "password", email: "dude@bro.com")
@@ -12,7 +16,7 @@ feature "Logged in features" do
 
     click_button 'login'
 
-    expect(page).to have_content 'logout'
+    expect(page).to have_content 'Profile'
 
   end
 end
