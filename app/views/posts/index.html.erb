@@ -1,15 +1,18 @@
-<h1 class="text-center">Prism</h1>
 
-<% if notice %>
-  <p id="notice"><%= notice %></p>
-<% end %>
+<div class="top_content">
+  <h1 class="text-center prism">Prism</h1>
 
-<div id="img-carousel" class="owl-carousel">
-  <% @posts.each do |post| %>
-    <div class="item">
-      <a href=<%= post_path(post) %>><img src=<%= post.images.first.file_path %> class="pic-shadow"></a>
-    </div>
+  <% if notice %>
+    <p id="notice"><%= notice %></p>
   <% end %>
+
+  <div id="img-carousel" class="owl-carousel">
+    <% @posts.each do |post| %>
+      <div class="item">
+        <a href=<%= post_path(post) %>><img src=<%= post.images.first.file_path %> class="pic-shadow"></a>
+      </div>
+    <% end %>
+  </div>
 </div>
 
 <div class="post-main text-center white-text">
@@ -28,4 +31,11 @@
     <%= link_to 'New Post', new_post_path, class:"new-button" %>
   </div>
 </div>
-
+<div class="photoShow">
+  <div>
+    <img class="current back-drop" src="/seedImages/violet_sky.png" >
+  </div>
+<!--   <div>
+    <img class="back-drop" src="/seedImages/orange_ice.png" >
+  </div> -->
+</div>
