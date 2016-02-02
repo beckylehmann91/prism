@@ -1,14 +1,14 @@
-<h1>Profile</h1>
-<h4>Your images</h4>
+<div class="new_post text-center">
 
-<div id="img-carousel" class="owl-carousel">
-  <% @user.posts.each do |post| %>
-  <div class="item">
-      <a href=<%= post_path(post) %>><img src=<%= post.images.first.filename.file.url %> class="pic-shadow"></a>
-    </div>
-  <% end %>
+  <h1>Profile</h1>
+  <h4>Your images</h4>
+
+  <div id="img-carousel" class="owl-carousel">
+    <% @user.posts.each do |post| %>
+    <div class="item">
+        <a href=<%= post_path(post) %>><img src=<%= post.images.first.filename.file.url %> class="pic-shadow"></a>
+      </div>
+    <% end %>
+  </div>
+
 </div>
-
-
-
-

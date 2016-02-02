@@ -203,6 +203,16 @@
     end
   end
 
+  def color_name
+    if self.color_dom == 1
+      return "blue"
+    elsif self.color_dom == 2
+      return "green"
+    elsif self.color_dom == 3
+      return "red"
+    end
+  end
+
   def melody
     Sound.find_by(luminence: self.lum, color_dominance: self.color_dom, role: "melody")
   end

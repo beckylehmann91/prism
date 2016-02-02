@@ -10,7 +10,6 @@
     <% @images.each do |p| %>
       <div class="each-photo">
         <%= image_tag p.filename_url, :class =>"photo pic-shadow" %>
-        <!-- <%= link_to "Edit Attachment", edit_image_path(p) %> -->
       </div>
     <% end %>
 
@@ -28,7 +27,7 @@
         <li>Luminence: <%= @images.first.lum %></li>
         <li>Color variety: <%= @images.first.var %> </li>
         <li>Contrast: <%= @images.first.con %> </li>
-        <li>Dominant color: <%= @images.first.color_dom %> </li>
+        <li>Dominant color: <%= @images.first.color_name.capitalize %> </li>
       </ul>
     </div>
 
