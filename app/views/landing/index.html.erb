@@ -21,14 +21,14 @@
     <ul>
       <% if session[:user_id] != nil %>
         <li class='polygon_top'>
-          <%= link_to 'Profile', user_path(session[:user_id]) %>
+          <%= link_to 'My Album', user_path(session[:user_id]) %>
         </li>
         <li class='polygon_top'></li>
         <li class='polygon_top'>
           <%= link_to 'Logout', logout_path, method: :get %>
         </li>
         <li class='polygon_bottom'>
-          <a href="/posts">Images</a>
+          <a href="/posts">Explore</a>
         </li>
         <li class='polygon_bottom'></li>
         <li class='polygon_bottom'>

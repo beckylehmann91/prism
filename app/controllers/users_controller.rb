@@ -10,8 +10,9 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    if @user.save
-      redirect_to '/login'
+    if @user.save && @user.authenticate(params[:user][:password])
+      session[:user_id] = @user.id
+      redirect_to @user
     else
       @errors = @user.errors.full_messages
       render 'new'
