@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   include ApplicationHelper
+  include AwsHelper
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -37,7 +38,10 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    s3 = create_s3                      # returns and s3 object to access aws
+    s3.bucket(bucket_name).delete_key(file_path_destory(@post)) # find bucket name and delete file from file path
     @post.destroy
+    flash[:notice] = "Image has been deleted"
     redirect_to posts_path
   end
 
