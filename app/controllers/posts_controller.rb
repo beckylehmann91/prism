@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   include ApplicationHelper
   include PostHelper
-
+  include AwsHelper
   #Run the set_post method in the show, edit, update, and destroy paths. This prevents having to instantiate a new variable in each path.
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
@@ -57,7 +57,12 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    # s3 = create_s3                      # returns and aws s3 object
+    # bucket = s3.buckets[bucket_name]    # return bucket name
+    # object = bucket.objects[file_key(@post)]
+    # object.delete
     @post.destroy
+    flash[:notice] = "Image has been deleted"
     redirect_to posts_path
   end
 
