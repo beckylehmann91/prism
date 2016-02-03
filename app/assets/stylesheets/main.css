@@ -13,8 +13,8 @@ body {
   padding: 10px 0 50px;
   margin: 0;
   color: white;
-/*  background: url('/images/pixel-trans10-bkg.png');
-*/  background-size: cover;
+  background: url('/images/pixel-trans10-bkg.png');
+  background-size: cover;
   min-height: 600px;
 }
 
@@ -161,4 +161,6 @@ body {
 .edit_post .actions {
   margin: 10px 0;
 }
+
+
 

@@ -1,25 +1,29 @@
 body {
   font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
   text-transform: uppercase;
-  background: rgb(15, 15, 15);
-}
+  background: white;
+/*  opacity: 0.8;
+*/}
 
-.main-container:before {
+.main-container {
   background-image: url("/images/pixel-embed-trans-bkg.png");
   background-size: cover;
   background-repeat: none;
-  opacity: 0.4;
+  color: gray;
 }
 
 .top-content {
   z-index: 6;
-  p
+  color: gray;
+  margin-top: 10%;
 }
 
 .prism {
   letter-spacing: 1.2em;
-  margin-right: -40px;
+  margin-right: -50px;
   margin-top: 5%;
+  margin-bottom: 5%;
+  font-size: 3em;
 }
 
 .new-button-div {
@@ -39,4 +43,70 @@ body {
 
 .post-item {
   min-width: 150px;
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+  color: orange;
+}
+
+@-webkit-keyframes fadeIt {
+  0%   { background-color: #FFFFFF; }
+  25%  { background-color: #d1d1e1;}
+  50%  { background-color: #FFFFFF; }
+  75%  { background-color: #ccf4ff;}
+  100% { background-color: #FFFFFF; }
+}
+@-moz-keyframes fadeIt {
+  0%   { background-color: #FFFFFF; }
+  25%  { background-color: #d1d1e1;}
+  50%  { background-color: #FFFFFF; }
+  75%  { background-color: #ccf4ff;}
+  100% { background-color: #FFFFFF; }
+}
+@-o-keyframes fadeIt {
+  0%   { background-color: #FFFFFF; }
+  25%  { background-color: #d1d1e1;}
+  50%  { background-color: #FFFFFF; }
+  75%  { background-color: #ccf4ff;}
+  100% { background-color: #FFFFFF; }
+}
+@keyframes fadeIt {
+  0%   { background-color: #FFFFFF; }
+  25%  { background-color: #d1d1e1;}
+  50%  { background-color: #FFFFFF; }
+  75%  { background-color: #ccf4ff;}
+  100% { background-color: #FFFFFF; }
+}
+
+.backgroundAnimated{
+  background-image: url("/images/pixel-trans10-bkg.png");
+  -webkit-animation: fadeIt 20s infinite;
+     -moz-animation: fadeIt 20s infinite;
+       -o-animation: fadeIt 20s infinite;
+          animation: fadeIt 20s infinite;
+}
+
+#img-carousel {
+  background-color: #cccccc;
+  opacity: 0.2;
+}
+
+.nav-bkg {
+  box-shadow: none;
+  background-color: none;
+  border: none;
+}
+
+.full-wide {
+  height: 0%;
+}
+
+.owl-carousel {
+  background-image: none;
+  background-color: transparent;
+  opacity: 0.1;
 }
