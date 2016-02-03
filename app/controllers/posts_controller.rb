@@ -1,8 +1,11 @@
 class PostsController < ApplicationController
   include ApplicationHelper
   include PostHelper
+
+  #Run the set_post method in the show, edit, update, and destroy paths. This prevents having to instantiate a new variable in each path.
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
+#if you are logged in, load up the most recent 7 posts and go to the index page. Otherwise redirect to the login
   def index
     if authenticated?
       @posts = Post.first(7)
@@ -11,14 +14,14 @@ class PostsController < ApplicationController
     end
   end
 
+#If you are authenticated, load the post you specify. Otherwise, redirect to the index page and provide a flash message
   def show
-    # @post = Post.find(params[:id])
     if authenticated?
       if @post
         @images = @post.images.all
         gon.sounds = @post.images.map { |image| image.sound_urls } # return array of sounds paths/image
       else
-        flash[:notice] = "Couldn't find post ID# #{params[:id]}"
+        flash[:notice] = "We couldn't find a post with an id of #{params[:id]}"
         redirect_to posts_path
       end
     else
@@ -31,6 +34,7 @@ class PostsController < ApplicationController
      @image = @post.images.build
    end
 
+#create new posts under a given logged in user. Redirect to the post show page if nothing goes wrong. Redirect to the new post form otherwise.
   def create
     @user = User.find(session[:user_id])
     @post = @user.posts.new(post_params)
@@ -58,6 +62,7 @@ class PostsController < ApplicationController
   end
 
   private
+  #private method that finds a specified post.
   def set_post
     @post = Post.find_by(id: params[:id])
   end
