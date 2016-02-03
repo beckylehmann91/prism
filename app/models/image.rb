@@ -1,25 +1,13 @@
  class Image < ActiveRecord::Base
   belongs_to :user
   validates :post_id, presence: true
-  # validates :height, presence: true
-  # validates :width, presence: true
-  # validates :lum, presence: true
-  # validates :lum, numericality: true
-  # validates :con, presence: true
-  # validates :con, numericality: true
-  # validates :var, presence: true
-  # validates :var, numericality: true
-  # validates :color_dom, presence: true
-  # validates :color_dom, numericality: true
-  # validates :filename, presence: true
-  # validates :filename, format: { with: /(.png)/, message: "only png format allowed"}
 
   mount_uploader :filename, FileUploader
   belongs_to :post
   has_many :sound_tags
   has_many :sounds, through: :sound_tags
 
-  before_save :h_w, :measure_luminence, :contrast, :color_variety, :color_dominance
+  before_save :image_dimensions, :measure_luminence, :contrast, :color_variety, :color_dominance
 
   # gets image path
   def file_path
@@ -32,20 +20,10 @@
     end
   end
 
-  def image_height
+  def image_dimensions
     canvas = self.convert_to_canvas
     self.height = canvas.height
-  end
-
-  def image_width
-    canvas = self.convert_to_canvas
     self.width = canvas.width
-  end
-
-  # calc height and width of image
-  def h_w
-    self.image_height
-    self.image_width
   end
 
   # convert to canvas object (all image colors)
@@ -69,7 +47,6 @@
   end
 
   def create_rows
-    self.h_w
     array = self.convert_color_to_array
     array.each_slice(self.width).to_a
   end
