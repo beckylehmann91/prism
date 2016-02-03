@@ -1,5 +1,5 @@
 $(function() {
-  if (dataset) {
+  if (typeof(dataset) !== 'undefined') {
     buildGraph();
   }
 });

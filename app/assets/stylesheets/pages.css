@@ -58,39 +58,68 @@ a:hover {
 
 @-webkit-keyframes fadeIt {
   0%   { background-color: #FFFFFF; }
-  25%  { background-color: #33cccc;}
-  50%  { background-color: #FFFFFF; }
-  75%  { background-color: #999999;}
+  10%  { background-color: #cccccc;}
+  20%  { background-color: #FFFFFF; }
+  30%  { background-color: #e5ffff;}
+  40% { background-color: #FFFFFF; }
+  50% { background-color: #999999; }
+  60% { background-color: #FFFFFF; }
+  70% { background-color: #fff3e5; }
+  80% { background-color: #FFFFFF; }
+  90% { background-color: #e5ffe5; }
   100% { background-color: #FFFFFF; }
 }
 @-moz-keyframes fadeIt {
   0%   { background-color: #FFFFFF; }
-  25%  { background-color: #cccccc;}
-  50%  { background-color: #FFFFFF; }
-  75%  { background-color: #999999;}
+  10%  { background-color: #cccccc;}
+  20%  { background-color: #FFFFFF; }
+  30%  { background-color: #e5ffff;}
+  40% { background-color: #FFFFFF; }
+  50% { background-color: #999999; }
+  60% { background-color: #FFFFFF; }
+  70% { background-color: #fff3e5; }
+  80% { background-color: #FFFFFF; }
+  90% { background-color: #e5ffe5; }
   100% { background-color: #FFFFFF; }
 }
 @-o-keyframes fadeIt {
   0%   { background-color: #FFFFFF; }
-  25%  { background-color: #cccccc;}
-  50%  { background-color: #FFFFFF; }
-  75%  { background-color: #999999;}
+  10%  { background-color: #cccccc;}
+  20%  { background-color: #FFFFFF; }
+  30%  { background-color: #e5ffff;}
+  40% { background-color: #FFFFFF; }
+  50% { background-color: #999999; }
+  60% { background-color: #FFFFFF; }
+  70% { background-color: #fff3e5; }
+  80% { background-color: #FFFFFF; }
+  90% { background-color: #e5ffe5; }
   100% { background-color: #FFFFFF; }
 }
 @keyframes fadeIt {
   0%   { background-color: #FFFFFF; }
+  10%  { background-color: #cccccc;}
+  20%  { background-color: #FFFFFF; }
+  30%  { background-color: #e5ffff;}
+  40% { background-color: #FFFFFF; }
+  50% { background-color: #f2e5ff; }
+  60% { background-color: #FFFFFF; }
+  70% { background-color: #fff3e5; }
+  80% { background-color: #FFFFFF; }
+  90% { background-color: #e5ffe5; }
+  100% { background-color: #FFFFFF; }
+}
+  /*0%   { background-color: #FFFFFF; }
   25%  { background-color: #cccccc;}
   50%  { background-color: #FFFFFF; }
   75%  { background-color: #999999;}
-  100% { background-color: #FFFFFF; }
-}
+  100% { background-color: #FFFFFF; }*/
 
 .backgroundAnimated{
   background-image: url("/images/pixel-trans10-bkg.png");
-  -webkit-animation: fadeIt 20s infinite;
-     -moz-animation: fadeIt 20s infinite;
-       -o-animation: fadeIt 20s infinite;
-          animation: fadeIt 20s infinite;
+  -webkit-animation: fadeIt 40s infinite;
+     -moz-animation: fadeIt 40s infinite;
+       -o-animation: fadeIt 40s infinite;
+          animation: fadeIt 40s infinite;
 }
 
 #img-carousel {
@@ -128,4 +157,9 @@ a:hover {
 html {
   height: 100%;
   width: 100%;
+}
+
+.new-button {
+  background-color: none;
+  border: 2px solid orange;
 }
