@@ -1,34 +1,35 @@
-<div class="top-content">
-  <div class="top_content">
+<div class="flex-container">
+  <div class="top_content flex-container">
     <h1 class="text-center prism">Prism</h1>
 
- <% if notice %>
-    <h3 id="notice" class="text-center notice"><%= notice %></h3>
-  <% end %>
-    <div class="new-button-div">
-      <%= link_to 'New Post', new_post_path, class:"new-button" %>
+    <% if notice %>
+      <h3 id="notice" class="text-center notice"><%= notice %></h3>
+    <% end %>
+      <div class="new-button-div">
+        <%= link_to 'New Post', new_post_path, class:"new-button" %>
+      </div>
+
+
+    <div id="img-carousel" class="owl-carousel">
+      <% @posts.each do |post| %>
+        <div class="item">
+          <a href=<%= post_path(post) %>><img src=<%= post.images.first.filename.file.url %> class="pic-shadow"></a>
+        </div>
+      <% end %>
     </div>
 
+    <div class="post-main text-center white-text">
+      <h3 class="teal-text">Recent Prism Uploads</h3>
 
-  <div id="img-carousel" class="owl-carousel">
-    <% @posts.each do |post| %>
-      <div class="item">
-        <a href=<%= post_path(post) %>><img src=<%= post.images.first.filename.file.url %> class="pic-shadow"></a>
-      </div>
-    <% end %>
-  </div>
-
-  <div class="post-main text-center white-text">
-    <h3 class="teal-text">Recent Prism Uploads</h3>
-
-    <% Post.last(3).each do |post| %>
-      <div class="post-item">
-        <h4><%= link_to post.title, post %></h4>
-        <a href="/posts/<%= post.id %>"><img src="<%= post.images.first.filename.file.url %>" class="tiny-pic"></a>
-        <p>
-          <%= link_to 'Listen', post %>
-        </p>
-      </div>
-    <% end %>
+      <% Post.last(3).each do |post| %>
+        <div class="post-item">
+          <h4><%= link_to post.title, post %></h4>
+          <a href="/posts/<%= post.id %>"><img src="<%= post.images.first.filename.file.url %>" class="tiny-pic"></a>
+          <p>
+            <%= link_to 'Listen', post %>
+          </p>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
