@@ -12,6 +12,4 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require soundmanager2
-//= require owl.carousel.js
 //= require_tree .
