@@ -57,11 +57,12 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    # s3 = create_s3                      # returns and aws s3 object
-    # bucket = s3.buckets[bucket_name]    # return bucket name
-    # object = bucket.objects[file_key(@post)]
-    # object.delete
-    @post.destroy
+    s3 = create_s3                            # returns and aws s3 object
+    bucket = s3.buckets[bucket_name]          # return bucket name
+    object = bucket.objects[file_key(@post)]  # return the object
+    p object
+    object.delete                             # delete the object from s3
+    @post.destroy                             # destroy post
     flash[:notice] = "Image has been deleted"
     redirect_to posts_path
   end

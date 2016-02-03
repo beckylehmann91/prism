@@ -9,8 +9,9 @@
 
   <div id="img-carousel" class="owl-carousel">
     <% @user.posts.each do |post| %>
-    <div class="item">
+      <div class="item">
         <a href=<%= post_path(post) %>><img src=<%= post.images.first.filename.file.url %> class="pic-shadow"></a>
+        <div class="delete-button"><%= link_to 'delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %></div>
       </div>
     <% end %>
   </div>
