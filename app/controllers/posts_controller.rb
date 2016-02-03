@@ -57,8 +57,10 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    s3 = create_s3                      # returns and s3 object to access aws
-    s3.bucket(bucket_name).delete_key(file_path_destory(@post)) # find bucket name and delete file from file path
+    # s3 = create_s3                      # returns and aws s3 object
+    # bucket = s3.buckets[bucket_name]    # return bucket name
+    # object = bucket.objects[file_key(@post)]
+    # object.delete
     @post.destroy
     flash[:notice] = "Image has been deleted"
     redirect_to posts_path
