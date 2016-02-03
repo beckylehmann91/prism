@@ -191,7 +191,7 @@
 
   # color variety, need to add color dom
   def pad
-    Sound.find_by(color_variety: self.var, role: "pad")
+    Sound.find_by(color_variety: self.var, color_dominance: self.color_dom, role: "pad")
   end
 
   def percussion
