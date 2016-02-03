@@ -6,7 +6,7 @@ body {
 */}
 
 .main-container {
-  background-image: url("/images/pixel-embed-trans-bkg.png");
+  background-image: url("/images/pixel-trans10-bkg.png");
   background-size: cover;
   background-repeat: none;
   color: gray;
@@ -21,9 +21,10 @@ body {
 .prism {
   letter-spacing: 1.2em;
   margin-right: -50px;
-  margin-top: 5%;
+  margin-top: 10%;
   margin-bottom: 5%;
-  font-size: 3em;
+  font-size: 2em;
+  color: #33cccc;
 }
 
 .new-button-div {
@@ -46,7 +47,7 @@ body {
 }
 
 a {
-  color: white;
+  color: #33cccc;
 }
 
 a:hover {
@@ -55,30 +56,30 @@ a:hover {
 
 @-webkit-keyframes fadeIt {
   0%   { background-color: #FFFFFF; }
-  25%  { background-color: #d1d1e1;}
+  25%  { background-color: #33cccc;}
   50%  { background-color: #FFFFFF; }
-  75%  { background-color: #ccf4ff;}
+  75%  { background-color: #999999;}
   100% { background-color: #FFFFFF; }
 }
 @-moz-keyframes fadeIt {
   0%   { background-color: #FFFFFF; }
-  25%  { background-color: #d1d1e1;}
+  25%  { background-color: #cccccc;}
   50%  { background-color: #FFFFFF; }
-  75%  { background-color: #ccf4ff;}
+  75%  { background-color: #999999;}
   100% { background-color: #FFFFFF; }
 }
 @-o-keyframes fadeIt {
   0%   { background-color: #FFFFFF; }
-  25%  { background-color: #d1d1e1;}
+  25%  { background-color: #cccccc;}
   50%  { background-color: #FFFFFF; }
-  75%  { background-color: #ccf4ff;}
+  75%  { background-color: #999999;}
   100% { background-color: #FFFFFF; }
 }
 @keyframes fadeIt {
   0%   { background-color: #FFFFFF; }
-  25%  { background-color: #d1d1e1;}
+  25%  { background-color: #cccccc;}
   50%  { background-color: #FFFFFF; }
-  75%  { background-color: #ccf4ff;}
+  75%  { background-color: #999999;}
   100% { background-color: #FFFFFF; }
 }
 
@@ -91,8 +92,7 @@ a:hover {
 }
 
 #img-carousel {
-  background-color: #cccccc;
-  opacity: 0.2;
+/*  background-color: rgba(10,10,10, 0.1);*/
 }
 
 .nav-bkg {
@@ -109,4 +109,16 @@ a:hover {
   background-image: none;
   background-color: transparent;
   opacity: 0.1;
+}
+
+.post-item {
+  background-color: rgba(10,10,10, 0.1);
+}
+
+.teal-text {
+  color: #33cccc;
+}
+
+.owl-item img {
+  box-shadow: 1px 1px 45px #666666;
 }
