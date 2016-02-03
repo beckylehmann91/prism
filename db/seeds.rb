@@ -1,3 +1,4 @@
+# Melody
 # MELODY: LUMINENCE 1
 Sound.create(filename: "/sounds/Bass_1_AMi_100.mp3", luminence: 1, color_dominance: 1, role: "melody")
 Sound.create(filename: "/sounds/Bass_2_GMa_100.mp3", luminence: 1, color_dominance: 2, role: "melody")
@@ -53,16 +54,35 @@ Sound.create(filename: "/sounds/melody100_harp.mp3", luminence: 10, color_domina
 
 
 # Pads
-Sound.create(filename: "/sounds/pad100-001.mp3", role: "pad", color_variety: 1)
-Sound.create(filename: "/sounds/pad100-002.mp3", role: "pad", color_variety: 2)
-Sound.create(filename: "/sounds/pad100-003.mp3", role: "pad", color_variety: 3)
-Sound.create(filename: "/sounds/pad100-004.mp3", role: "pad", color_variety: 4)
-Sound.create(filename: "/sounds/pad100-005.mp3", role: "pad", color_variety: 5)
-Sound.create(filename: "/sounds/pad100-006.mp3", role: "pad", color_variety: 6)
-Sound.create(filename: "/sounds/pad100-007.mp3", role: "pad", color_variety: 7)
-Sound.create(filename: "/sounds/pad100-008.mp3", role: "pad", color_variety: 8)
-Sound.create(filename: "/sounds/pad100-009.mp3", role: "pad", color_variety: 9)
-Sound.create(filename: "/sounds/pad100-010.mp3", role: "pad", color_variety: 10)
+# PAD: COLOR VARIETY 1
+Sound.create(filename: "/sounds/pad100-001.mp3", role: "pad", color_variety: 1, color_dominance: 3)
+
+# PAD: COLOR VARIETY 2
+Sound.create(filename: "/sounds/pad100-002.mp3", role: "pad", color_variety: 2, color_dominance: 3)
+
+# PAD: COLOR VARIETY 3
+Sound.create(filename: "/sounds/pad100-003.mp3", role: "pad", color_variety: 3, color_dominance: 3)
+
+# PAD: COLOR VARIETY 4
+Sound.create(filename: "/sounds/pad100-004.mp3", role: "pad", color_variety: 4, color_dominance: 3)
+
+# PAD: COLOR VARIETY 5
+Sound.create(filename: "/sounds/pad100-005.mp3", role: "pad", color_variety: 5, color_dominance: 3)
+
+# PAD: COLOR VARIETY 6
+Sound.create(filename: "/sounds/pad100-006.mp3", role: "pad", color_variety: 6, color_dominance: 3)
+
+# PAD: COLOR VARIETY 7
+Sound.create(filename: "/sounds/pad100-007.mp3", role: "pad", color_variety: 7, color_dominance: 3)
+
+# PAD: COLOR VARIETY 8
+Sound.create(filename: "/sounds/pad100-008.mp3", role: "pad", color_variety: 8, color_dominance: 3)
+
+# PAD: COLOR VARIETY 9
+Sound.create(filename: "/sounds/pad100-009.mp3", role: "pad", color_variety: 9, color_dominance: 3)
+
+# PAD: COLOR VARIETY 10
+Sound.create(filename: "/sounds/pad100-010.mp3", role: "pad", color_variety: 10, color_dominance: 3)
 
 # Percussion
 Sound.create(filename: "/sounds/perc100-001.mp3", role: "percussion", contrast: 1)

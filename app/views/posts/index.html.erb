@@ -2,12 +2,13 @@
   <div class="top_content">
     <h1 class="text-center prism">Prism</h1>
 
+ <% if notice %>
+    <h3 id="notice" class="text-center notice"><%= notice %></h3>
+  <% end %>
     <div class="new-button-div">
       <%= link_to 'New Post', new_post_path, class:"new-button" %>
     </div>
-  <% if notice %>
-    <h3 id="notice" class="text-center notice"><%= notice %></h3>
-  <% end %>
+
 
   <div id="img-carousel" class="owl-carousel">
     <% @posts.each do |post| %>
@@ -18,7 +19,7 @@
   </div>
 
   <div class="post-main text-center white-text">
-    <h3>Recent Prism Uploads</h3>
+    <h3 class="teal-text">Recent Prism Uploads</h3>
 
     <% Post.last(3).each do |post| %>
       <div class="post-item">

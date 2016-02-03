@@ -1,5 +1,5 @@
 <div class="post-show text-center">
-  <h1><%= @post.title %></h1>
+  <h1 class="prism"><%= @post.title %></h1>
 
   <% if notice %>
     <p id="notice"><%= notice %></p>
@@ -9,26 +9,31 @@
 
     <% @images.each do |p| %>
       <div class="each-photo">
-        <%= image_tag p.filename_url, :class =>"photo pic-shadow" %>
+        <%= image_tag p.filename_url, :class =>"photo pic-
+shadow" %>
       </div>
     <% end %>
 
     <div class="audio-controls">
       <ul>
-        <li><a href="#" id="play">play</a></li>
-        <li><a href="#" id="stop">stop</a></li>
-        <li><a href="#" id="pause">pause</a></li>
+        <li><a href="#" id="play"><%= image_tag('playButton.png') %></a></li>
+        <li><a href="#" id="stop"><%= image_tag('stopButton.png') %></a></li>
+        <li><a href="#" id="pause"><%= image_tag('pauseButton.png') %></a></li>
       </ul>
     </div>
 
-    <div class="matrix">
+  <!--   <div class="matrix">
       <h4>Sound Matrix</h4>
       <ul>
         <li>Luminence: <%= @images.first.lum %></li>
         <li>Color variety: <%= @images.first.var %> </li>
         <li>Contrast: <%= @images.first.con %> </li>
         <li>Dominant color: <%= @images.first.color_name.capitalize %> </li>
-      </ul>
+      </ul> -->
+
+      <div id="graph">
+        <%= render 'd3graph' %>
+      </div>
     </div>
 
     <div>

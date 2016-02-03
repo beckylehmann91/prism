@@ -74,6 +74,8 @@ GEM
     concurrent-ruby (1.0.0)
     debug_inspector (0.0.2)
     diff-lcs (1.2.5)
+    dropzonejs-rails (0.7.2)
+      rails (> 3.1)
     erubis (2.7.0)
     excon (0.45.4)
     execjs (2.6.0)
@@ -329,6 +331,7 @@ DEPENDENCIES
   carrierwave
   chunky_png
   coffee-rails (~> 4.1.0)
+  dropzonejs-rails
   figaro
   fog
   gon

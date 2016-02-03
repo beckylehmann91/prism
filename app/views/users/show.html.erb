@@ -1,7 +1,11 @@
 <div class="new_post text-center">
 
-  <h1>Profile</h1>
+  <h1 class="prism">Profile</h1>
   <h4>Your images</h4>
+
+  <div class="new-button-div">
+    <%= link_to 'New Post', new_post_path, class:"new-button" %>
+  </div>
 
   <div id="img-carousel" class="owl-carousel">
     <% @user.posts.each do |post| %>

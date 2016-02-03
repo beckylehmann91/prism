@@ -4,6 +4,7 @@
   <title>Prism</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
+  <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
   <%= Gon::Base.render_data %>
   <%= csrf_meta_tags %>
 </head>
@@ -12,7 +13,7 @@
 <% unless @navigation == false %>
   <%= render '/layouts/navi' %>
 <% end %>
-<div class="main-container">
+<div class="main-container backgroundAnimated">
 
   <%= yield %>
 

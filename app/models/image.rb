@@ -189,7 +189,7 @@
     Sound.find_by(luminence: self.lum, color_dominance: self.color_dom, role: "melody")
   end
 
-  # color variety
+  # color variety, need to add color dom
   def pad
     Sound.find_by(color_variety: self.var, role: "pad")
   end

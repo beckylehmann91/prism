@@ -4,6 +4,7 @@ html,
 body {
   min-height: 100%;
   -webkit-font-smoothing: antialiased;
+  overflow: auto;
 }
 
 #landing {
@@ -227,4 +228,5 @@ body {
   left: 0;
   z-index: 10;
   opacity: 0.6;
+  color: white;
 }

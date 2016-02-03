@@ -1,25 +1,32 @@
 body {
   font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
   text-transform: uppercase;
-  background: rgb(15, 15, 15);
+  background: white;
 }
 
-.main-container:before {
-  background-image: url("/images/pixel-embed-trans-bkg.png");
+.main-container {
+  background-image: url("/images/pixel-trans10-bkg.png");
   background-size: cover;
+/*  height: 100%;
+  width: 100%;*/
   background-repeat: none;
-  opacity: 0.4;
+  color: gray;
+  overflow: auto;
 }
 
 .top-content {
   z-index: 6;
-  p
+  color: gray;
+  margin-top: 10%;
 }
 
 .prism {
-  letter-spacing: 1.2em;
-  margin-right: -40px;
-  margin-top: 5%;
+  letter-spacing: 1.1em;
+  margin-right: -50px;
+  margin-top: 10%;
+  margin-bottom: 5%;
+  font-size: 2em;
+  color: #33cccc;
 }
 
 .new-button-div {
@@ -39,4 +46,86 @@ body {
 
 .post-item {
   min-width: 150px;
+}
+
+a {
+  color: #33cccc;
+}
+
+a:hover {
+  color: orange;
+}
+
+@-webkit-keyframes fadeIt {
+  0%   { background-color: #FFFFFF; }
+  25%  { background-color: #33cccc;}
+  50%  { background-color: #FFFFFF; }
+  75%  { background-color: #999999;}
+  100% { background-color: #FFFFFF; }
+}
+@-moz-keyframes fadeIt {
+  0%   { background-color: #FFFFFF; }
+  25%  { background-color: #cccccc;}
+  50%  { background-color: #FFFFFF; }
+  75%  { background-color: #999999;}
+  100% { background-color: #FFFFFF; }
+}
+@-o-keyframes fadeIt {
+  0%   { background-color: #FFFFFF; }
+  25%  { background-color: #cccccc;}
+  50%  { background-color: #FFFFFF; }
+  75%  { background-color: #999999;}
+  100% { background-color: #FFFFFF; }
+}
+@keyframes fadeIt {
+  0%   { background-color: #FFFFFF; }
+  25%  { background-color: #cccccc;}
+  50%  { background-color: #FFFFFF; }
+  75%  { background-color: #999999;}
+  100% { background-color: #FFFFFF; }
+}
+
+.backgroundAnimated{
+  background-image: url("/images/pixel-trans10-bkg.png");
+  -webkit-animation: fadeIt 20s infinite;
+     -moz-animation: fadeIt 20s infinite;
+       -o-animation: fadeIt 20s infinite;
+          animation: fadeIt 20s infinite;
+}
+
+#img-carousel {
+/*  background-color: rgba(10,10,10, 0.1);*/
+}
+
+.nav-bkg {
+  box-shadow: none;
+  background-color: none;
+  border: none;
+}
+
+.full-wide {
+  height: 0%;
+}
+
+.owl-carousel {
+  background-image: none;
+  background-color: transparent;
+  opacity: 0.1;
+}
+
+.post-item {
+  background-color: rgba(10,10,10, 0.1);
+}
+
+.teal-text {
+  color: #33cccc;
+}
+
+.owl-item img {
+  box-shadow: 1px 1px 45px #666666;
+}
+
+html {
+  height: 100%;
+  width: 100%;
 }
