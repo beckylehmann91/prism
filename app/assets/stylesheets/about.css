@@ -2,6 +2,6 @@ span{
   display: inline-block;
 }
 
-.link{
-  background: white;
+.center-text {
+  text-align: center;
 }
