@@ -230,3 +230,7 @@ body {
   opacity: 0.6;
   color: white;
 }
+
+input {
+  text-transform: uppercase;
+}

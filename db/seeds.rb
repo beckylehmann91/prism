@@ -55,33 +55,53 @@ Sound.create(filename: "/sounds/melody100_harp.mp3", luminence: 10, color_domina
 
 # Pads
 # PAD: COLOR VARIETY 1
+Sound.create(filename: "/sounds/Amin/pad100_Am-001.mp3", role: "pad", color_variety: 1, color_dominance: 1)
+Sound.create(filename: "/sounds/Gmaj/pad100_Gmaj-001.mp3", role: "pad", color_variety: 1, color_dominance: 2)
 Sound.create(filename: "/sounds/pad100-001.mp3", role: "pad", color_variety: 1, color_dominance: 3)
 
 # PAD: COLOR VARIETY 2
+Sound.create(filename: "/sounds/Amin/pad100_Am-002.mp3", role: "pad", color_variety: 2, color_dominance: 1)
+Sound.create(filename: "/sounds/Gmaj/pad100_Gmaj-002.mp3", role: "pad", color_variety: 2, color_dominance: 2)
 Sound.create(filename: "/sounds/pad100-002.mp3", role: "pad", color_variety: 2, color_dominance: 3)
 
 # PAD: COLOR VARIETY 3
+Sound.create(filename: "/sounds/Amin/pad100_Am-003.mp3", role: "pad", color_variety: 3, color_dominance: 1)
+Sound.create(filename: "/sounds/Gmaj/pad100_Gmaj-003.mp3", role: "pad", color_variety: 3, color_dominance: 2)
 Sound.create(filename: "/sounds/pad100-003.mp3", role: "pad", color_variety: 3, color_dominance: 3)
 
 # PAD: COLOR VARIETY 4
+Sound.create(filename: "/sounds/Amin/pad100_Am-004.mp3", role: "pad", color_variety: 4, color_dominance: 1)
+Sound.create(filename: "/sounds/Gmaj/pad100_Gmaj-004.mp3", role: "pad", color_variety: 4, color_dominance: 2)
 Sound.create(filename: "/sounds/pad100-004.mp3", role: "pad", color_variety: 4, color_dominance: 3)
 
 # PAD: COLOR VARIETY 5
+Sound.create(filename: "/sounds/Amin/pad100_Am-005.mp3", role: "pad", color_variety: 5, color_dominance: 1)
+Sound.create(filename: "/sounds/Gmaj/pad100_Gmaj-005.mp3", role: "pad", color_variety: 5, color_dominance: 2)
 Sound.create(filename: "/sounds/pad100-005.mp3", role: "pad", color_variety: 5, color_dominance: 3)
 
 # PAD: COLOR VARIETY 6
+Sound.create(filename: "/sounds/Amin/pad100_Am-006.mp3", role: "pad", color_variety: 6, color_dominance: 1)
+Sound.create(filename: "/sounds/Gmaj/pad100_Gmaj-006.mp3", role: "pad", color_variety: 6, color_dominance: 2)
 Sound.create(filename: "/sounds/pad100-006.mp3", role: "pad", color_variety: 6, color_dominance: 3)
 
 # PAD: COLOR VARIETY 7
+Sound.create(filename: "/sounds/Amin/pad100_Am-007.mp3", role: "pad", color_variety: 7, color_dominance: 1)
+Sound.create(filename: "/sounds/Gmaj/pad100_Gmaj-007.mp3", role: "pad", color_variety: 7, color_dominance: 2)
 Sound.create(filename: "/sounds/pad100-007.mp3", role: "pad", color_variety: 7, color_dominance: 3)
 
 # PAD: COLOR VARIETY 8
+Sound.create(filename: "/sounds/Amin/pad100_Am-008.mp3", role: "pad", color_variety: 8, color_dominance: 1)
+Sound.create(filename: "/sounds/Gmaj/pad100_Gmaj-008.mp3", role: "pad", color_variety: 8, color_dominance: 2)
 Sound.create(filename: "/sounds/pad100-008.mp3", role: "pad", color_variety: 8, color_dominance: 3)
 
 # PAD: COLOR VARIETY 9
+Sound.create(filename: "/sounds/Amin/pad100_Am-009.mp3", role: "pad", color_variety: 9, color_dominance: 1)
+Sound.create(filename: "/sounds/Gmaj/pad100_Gmaj-009.mp3", role: "pad", color_variety: 9, color_dominance: 2)
 Sound.create(filename: "/sounds/pad100-009.mp3", role: "pad", color_variety: 9, color_dominance: 3)
 
 # PAD: COLOR VARIETY 10
+Sound.create(filename: "/sounds/Amin/pad100_Am-010.mp3", role: "pad", color_variety: 10, color_dominance: 1)
+Sound.create(filename: "/sounds/Gmaj/pad100_Gmaj-010.mp3", role: "pad", color_variety: 10, color_dominance: 2)
 Sound.create(filename: "/sounds/pad100-010.mp3", role: "pad", color_variety: 10, color_dominance: 3)
 
 # Percussion

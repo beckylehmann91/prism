@@ -1,5 +1,4 @@
 $(function() {
-  console.log("I RAN!");
   setInterval("nextImage()", 7000);
 });
 
