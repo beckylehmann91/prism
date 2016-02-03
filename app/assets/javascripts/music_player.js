@@ -5,6 +5,7 @@ $(function() {
       var FIRST_ELEMENT = 0
       var music = []
       var length = gon.sounds[FIRST_ELEMENT].length
+      var isPlaying = false;
 
       // create sound objects accessing first set of array and each element inside
       // load file paths into muisc array
@@ -25,16 +26,20 @@ $(function() {
 
       // play songs
       $('div #play').on('click', function() {
-        for(var i = 0; i < length; i++){
-          loopSound(music[i]);
+        if(!isPlaying){                         // check if player is playing. If not proceed and play.
+          for(var i = 0; i < length; i++){
+            loopSound(music[i]);
+          }
+          isPlaying = true;
         }
       });
 
       // stop playback
       $('div #stop').on('click', function() {
-        for(var i = 0; i < length; i++){
+        for(var i = 0; i < length; i++) {
           music[i].stop();
         }
+        isPlaying = false;
       });
 
       // pause playback
@@ -42,8 +47,8 @@ $(function() {
         for(var i = 0; i < length; i++){
           music[i].pause();
         }
+        isPlaying = false;
       });
     }
   });
 });
-

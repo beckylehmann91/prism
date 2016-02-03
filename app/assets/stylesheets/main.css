@@ -1,7 +1,7 @@
 body {
   margin: 0;
   background-color: black;
-  font-family: Impact;
+  font-family: 'Lato', sans-serif;
 }
 
 .photo {
@@ -13,8 +13,8 @@ body {
   padding: 10px 0 50px;
   margin: 0;
   color: white;
-  background: url('/images/pixel-trans10-bkg.png');
-  background-size: cover;
+/*  background: url('/images/pixel-trans10-bkg.png');
+*/  background-size: cover;
   min-height: 600px;
 }
 
@@ -34,6 +34,10 @@ body {
 
 .white-text {
   color:white;
+}
+
+.notice {
+  color: #8B008B;
 }
 
 .tiny-pic {
@@ -99,6 +103,8 @@ body {
 
 .post-item p a {
   color: white;
+  font-size: 1.2em;
+  font-weight: 600;
 }
 
 .post-item p a:visited {
@@ -118,6 +124,7 @@ body {
   box-shadow: -1px 1px 6px rgba(255, 255, 255, 0.5);
   color: white;
   text-shadow: 1px 1px 3px navy;
+  font-weight: 600;
 }
 
 .footer {
@@ -132,4 +139,26 @@ body {
   text-shadow: 1px 1px 4px black;
 }
 
+.new_post input[type="text"], .edit_post input[type="text"], .new_post input[type="password"] {
+  width:200px;
+}
+
+.new_post input, .new_user input {
+  margin: 10px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 600;
+}
+
+.new_post input[type='submit'], .edit_post input[type="submit"], .new_user input[type="submit"] {
+  padding: 10px 15px;
+  border-radius: 15px;
+  background-color: orange;
+  color: white;
+  font-size: 1.1em;
+  font-weight: 800;
+}
+
+.edit_post .actions {
+  margin: 10px 0;
+}
 

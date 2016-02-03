@@ -62,7 +62,7 @@ Sound.create(filename: "/sounds/pad100-006.mp3", role: "pad", color_variety: 6)
 Sound.create(filename: "/sounds/pad100-007.mp3", role: "pad", color_variety: 7)
 Sound.create(filename: "/sounds/pad100-008.mp3", role: "pad", color_variety: 8)
 Sound.create(filename: "/sounds/pad100-009.mp3", role: "pad", color_variety: 9)
-Sound.create(filename: "/sounds/pad100-0010.mp3", role: "pad", color_variety: 10)
+Sound.create(filename: "/sounds/pad100-010.mp3", role: "pad", color_variety: 10)
 
 # Percussion
 Sound.create(filename: "/sounds/perc100-001.mp3", role: "percussion", contrast: 1)
