@@ -20,6 +20,7 @@
     end
   end
 
+#grab the dimensions of a submitted image
   def image_dimensions
     canvas = self.convert_to_canvas
     self.height = canvas.height
@@ -69,6 +70,7 @@
     end
   end
 
+  #generate average rgb values for each row of the image
   def average_attributes
     sums = self.sum_attributes
     sums.map do |row|
@@ -78,7 +80,7 @@
     end
   end
 
-  # take row and each RGB value and calculate luminence
+  # calculate the luminence values of each row
   def luminence
     averages = self.average_attributes
     luminence_values = []
@@ -90,6 +92,7 @@
     # return ((((luminence_values.reduce(:+))/length)/ 255) * 10).ceil
   end
 
+  #consolidate a single luminence value for an image by averaging the row luminence data.
   def measure_luminence
     luminence = self.luminence
     length = luminence.length
@@ -111,49 +114,41 @@
     end
   end
 
-  # get contrast ratio
+  # get contrast ratio by finding the luminence of the brightest row and dividing it by that of the darkest row
   def contrast
     contrast = self.luminence.sort.reverse!
     contrast = ((contrast.first + 0.05)/(contrast.last + 0.05))
 
     if contrast >= 5.5
       self.con = 10
-
     elsif contrast >= 5 && contrast < 5.5
       self.con = 9
-
     elsif contrast >= 4.5 && contrast < 5
       self.con = 8
-
     elsif contrast >= 4 && contrast < 4.5
       self.con = 7
-
     elsif contrast >= 3.5 && contrast < 4
       self.con = 6
-
     elsif contrast >= 3 && contrast < 3.5
       self.con = 5
-
     elsif contrast >= 2.5 && contrast < 3
       self.con = 4
-
     elsif contrast >= 2 && contrast < 2.5
       self.con = 3
-
     elsif contrast >= 1.5 && contrast < 2
       self.con = 2
-
     else
       self.con = 1
-
     end
 
   end
 
+#divide the number of unique colors in the image by the number of pixels in the image.
   def color_variety
     self.var = (((self.convert_to_canvas.palette.length).to_f/(self.height * self.width).to_f) * 10).ceil
   end
 
+#sum the rgb values for all rows of the image and find the most common rgb value.
   def color_dominance
     red = 0
     green = 0
