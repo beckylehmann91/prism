@@ -41,20 +41,20 @@ var buildGraph = function() {
      .attr({
       transform: "translate(30, 180)",
       fill: 'none',
-      stroke: 'white'
+      stroke: '#33cccc'
      });
 
 // add labels for circles
   svg.selectAll("text")
-     .data([["Luminence",55], ["Color variety",160], ["Contrast",285] ] )
+     .data([["Luminence",55], ["Color variety",155], ["Contrast",280] ] )
      .enter()
      .append("text")
      .text(function(d) {return d[0];})
      .attr({
       x: function(d) {return d[1]},
       y: 160,
-      fill: "white",
-      'font-size': 12,
+      fill: "#33cccc",
+      'font-size': 13,
       'text-transform': 'lowercase'
      });
 
