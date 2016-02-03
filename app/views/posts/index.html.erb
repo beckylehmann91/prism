@@ -25,7 +25,9 @@
       <div class="post-item">
         <h4><%= link_to post.title, post %></h4>
         <a href="/posts/<%= post.id %>"><img src="<%= post.images.first.filename.file.url %>" class="tiny-pic"></a>
-        <p><%= link_to 'Listen', post %></p>
+        <p>
+          <%= link_to 'Listen', post %>
+        </p>
       </div>
     <% end %>
   </div>
