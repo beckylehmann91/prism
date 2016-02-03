@@ -25,7 +25,8 @@ $(function() {
       }
 
       // play songs
-      $('div #play').on('click', function() {
+      $('div #play').on('click', function(e) {
+        e.preventDefault();
         if(!isPlaying){                         // check if player is playing. If not proceed and play.
           for(var i = 0; i < length; i++){
             loopSound(music[i]);
@@ -35,7 +36,8 @@ $(function() {
       });
 
       // stop playback
-      $('div #stop').on('click', function() {
+      $('div #stop').on('click', function(e) {
+        e.preventDefault();
         for(var i = 0; i < length; i++) {
           music[i].stop();
         }
@@ -43,7 +45,8 @@ $(function() {
       });
 
       // pause playback
-      $('div #pause').on('click', function() {
+      $('div #pause').on('click', function(e) {
+        e.preventDefault();
         for(var i = 0; i < length; i++){
           music[i].pause();
         }
