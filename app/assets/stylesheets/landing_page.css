@@ -179,15 +179,16 @@ p {
 }
 
 .photoShow {
-/*  height: 100%;
-  width: 100%;*/
-  position: relative;
-  margin: 0 auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .photoShow div img {
-  height: 900px;
-  width: 1300px;
+  height: 100%;
+  width: 100%;
   top: 0;
   left: 0;
   opacity: 0.8;
