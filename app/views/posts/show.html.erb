@@ -9,7 +9,8 @@
 
     <% @images.each do |p| %>
       <div class="each-photo">
-        <%= image_tag p.filename_url, :class =>"photo pic-shadow" %>
+        <%= image_tag p.filename_url, :class =>"photo pic-
+shadow" %>
       </div>
     <% end %>
 
@@ -21,14 +22,18 @@
       </ul>
     </div>
 
-    <div class="matrix">
+  <!--   <div class="matrix">
       <h4>Sound Matrix</h4>
       <ul>
         <li>Luminence: <%= @images.first.lum %></li>
         <li>Color variety: <%= @images.first.var %> </li>
         <li>Contrast: <%= @images.first.con %> </li>
         <li>Dominant color: <%= @images.first.color_name.capitalize %> </li>
-      </ul>
+      </ul> -->
+
+      <div id="graph">
+        <%= render 'd3graph' %>
+      </div>
     </div>
 
     <div>
