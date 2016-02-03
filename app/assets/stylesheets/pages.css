@@ -2,14 +2,16 @@ body {
   font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
   text-transform: uppercase;
   background: white;
-/*  opacity: 0.8;
-*/}
+}
 
 .main-container {
   background-image: url("/images/pixel-trans10-bkg.png");
   background-size: cover;
+/*  height: 100%;
+  width: 100%;*/
   background-repeat: none;
   color: gray;
+  overflow: auto;
 }
 
 .top-content {
@@ -121,4 +123,9 @@ a:hover {
 
 .owl-item img {
   box-shadow: 1px 1px 45px #666666;
+}
+
+html {
+  height: 100%;
+  width: 100%;
 }

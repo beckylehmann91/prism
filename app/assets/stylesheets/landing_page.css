@@ -4,6 +4,7 @@ html,
 body {
   min-height: 100%;
   -webkit-font-smoothing: antialiased;
+  overflow: auto;
 }
 
 #landing {
