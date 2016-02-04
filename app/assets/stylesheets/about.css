@@ -1,7 +1,17 @@
 span{
   display: inline-block;
+  margin: 0 auto;
 }
 
 .center-text {
   text-align: center;
+}
+
+span.images {
+  align: center;
+}
+
+.img-alt{
+  margin-right: auto;
+  margin-left: auto;
 }
