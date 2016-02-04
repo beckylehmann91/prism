@@ -217,20 +217,46 @@ body {
 #app_name {
   margin: auto;
   font-size: 10em;
-  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-  letter-spacing: 1.2em;
-  display: inline-block;
-  text-align: center;
-  vertical-align: center;
-  background: rgba(0, 0, 0, 0);
+  font-family: Montserrat, "Helvetica Neue", sans-serif;
+  letter-spacing: 1.4em;
+  background: none;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 10;
   opacity: 0.6;
   color: white;
+  overflow: hidden;
 }
 
-input {
-  text-transform: uppercase;
+.flex-container {
+  width: 100%;
+}
+
+@media screen and (max-width:1400px) {
+  #app_name {
+    letter-spacing: 1.3em;
+    font-size: 9em;
+  }
+}
+
+@media screen and (max-width:1200px) {
+  #app_name {
+    letter-spacing: 1.2em;
+    font-size: 8em;
+  }
+}
+
+@media screen and (max-width:1050px) {
+  #app_name {
+    letter-spacing: 1.1em;
+    font-size: 7em;
+  }
+}
+
+@media screen and (max-width:900px) {
+  #app_name {
+    letter-spacing: 1em;
+    font-size: 6.4em;
+  }
 }
