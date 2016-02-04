@@ -11,7 +11,7 @@ body {
   width: 100%;*/
   background-repeat: none;
   color: gray;
-  overflow: auto;
+  overflow: hidden;
 }
 
 .top-content {

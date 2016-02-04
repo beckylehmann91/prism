@@ -1,4 +1,5 @@
 $(function() {
+  $(".photoShow div img").width($(window).width());
   setInterval("nextImage()", 7000);
 });
 
