@@ -23,8 +23,8 @@ body {
 .prism {
   letter-spacing: 1.1em;
   margin-right: -50px;
-  margin-top: 10%;
-  margin-bottom: 5%;
+  margin-top: 8%;
+  margin-bottom: 3%;
   font-size: 2em;
   color: #33cccc;
   text-transform: uppercase;
@@ -36,8 +36,8 @@ body {
 }
 
 #img-carousel {
-  margin-top: 5%;
-  padding: 5%;
+  margin-top: 2%;
+  padding: 2% 5% 5%;
 }
 
 .owl-item {
@@ -170,3 +170,7 @@ html {
   @include flex-wrap(wrap);
 }*/
 /* COMMENTED DUE TO HEROKU PUSH*/
+
+.upper-margin {
+  margin-top: 5%;
+}
