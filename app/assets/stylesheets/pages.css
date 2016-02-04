@@ -1,6 +1,6 @@
 body {
   font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
   background: white;
 }
 
@@ -27,6 +27,7 @@ body {
   margin-bottom: 5%;
   font-size: 2em;
   color: #33cccc;
+  text-transform: uppercase;
 }
 
 .new-button-div {

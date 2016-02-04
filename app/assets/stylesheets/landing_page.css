@@ -171,14 +171,14 @@ li {
   margin-top: -30px;
 }
 
-p {
+/*p {
   color: #666;
   cursor:default;
   font-size:0.8em;
   margin-top:5em;
   user-select: none;
 }
-
+*/
 .photoShow {
   position: fixed;
   top: 0;
@@ -216,21 +216,61 @@ body {
 
 #app_name {
   margin: auto;
-  font-size: 10em;
-  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-  letter-spacing: 1.2em;
-  display: inline-block;
-  text-align: center;
-  vertical-align: center;
-  background: rgba(0, 0, 0, 0);
+  background: none;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 10;
   opacity: 0.6;
-  color: white;
+  overflow: hidden;
+  padding-left: 0.8em;
 }
 
-input {
-  text-transform: uppercase;
+#app_name h1 {
+  font-weight: 400;
+  margin:0;
+  color: white;
+  font-size: 10em;
+  font-family: Montserrat, "Helvetica Neue", sans-serif;
+  text-align: center;
+  letter-spacing: 1.4em;
+}
+
+.flex-container {
+  width: 100%;
+}
+
+@media screen and (max-width:1400px) {
+  #app_name h1 {
+    letter-spacing: 1.3em;
+    font-size: 9em;
+  }
+}
+
+@media screen and (max-width:1200px) {
+  #app_name h1 {
+    letter-spacing: 1.2em;
+    font-size: 8em;
+  }
+}
+
+@media screen and (max-width:1050px) {
+  #app_name h1 {
+    letter-spacing: 1.1em;
+    font-size: 7em;
+  }
+}
+
+@media screen and (max-width:900px) {
+  #app_name h1 {
+    letter-spacing: 1em;
+    font-size: 6.4em;
+  }
+}
+
+@media screen and (max-width:600px) {
+  #app_name h1 {
+    letter-spacing: 0.9em;
+    font-size: 5em;
+  }
 }
