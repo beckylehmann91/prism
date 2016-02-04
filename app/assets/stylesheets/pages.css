@@ -164,7 +164,8 @@ html {
   border: 2px solid orange;
 }
 
-.flex-container {
+/*.flex-container {
   @include display-flex();
   @include flex-wrap(wrap);
-}
+}*/
+/* COMMENTED DUE TO HEROKU PUSH*/
