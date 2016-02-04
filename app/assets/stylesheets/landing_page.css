@@ -209,13 +209,17 @@ li {
   z-index: 1;
 }
 
+.spacer {
+  height: 1000px;
+}
+
 body {
   margin: 0;
   padding: 0;
 }
 
 #app_name {
-  margin: auto;
+  margin:0;
   background: none;
   position: absolute;
   top: 0;
@@ -223,11 +227,11 @@ body {
   z-index: 10;
   opacity: 0.6;
   overflow: hidden;
-  padding-left: 0.8em;
 }
 
 #app_name h1 {
-  font-weight: 400;
+  font-weight: 200;
+  padding-left: 1.4em;
   margin:0;
   color: white;
   font-size: 10em;
