@@ -21,33 +21,33 @@
     <ul>
       <% if session[:user_id] != nil %>
         <li class='polygon_top'>
-          <%= link_to 'Profile', user_path(session[:user_id]) %>
+          <%= link_to 'Home', root_path %>
         </li>
         <li class='polygon_top'></li>
         <li class='polygon_top'>
-          <%= link_to 'Logout', logout_path, method: :get %>
+          <%= link_to 'Profile', user_path(session[:user_id]) %>
         </li>
         <li class='polygon_bottom'>
           <a href="/posts">Explore</a>
         </li>
         <li class='polygon_bottom'></li>
         <li class='polygon_bottom'>
-          <a href="/about">About</a>
+          <%= link_to 'Logout', logout_path, method: :get %>
         </li>
       <% else %>
         <li class='polygon_top'>
-          <%= link_to 'Login', login_path %>
+          <%= link_to 'Home', root_path %>
         </li>
         <li class='polygon_top'></li>
         <li class='polygon_top'>
-          <%= link_to 'Signup', new_user_path %>
+          <%= link_to 'Login', login_path %>
         </li>
         <li class='polygon_bottom'>
-          <a href="/posts">Images</a>
+          <a href="/posts">Explore</a>
         </li>
         <li class='polygon_bottom'></li>
         <li class='polygon_bottom'>
-          <a href="/about">About</a>
+          <%= link_to 'Signup', new_user_path %>
         </li>
       <% end %>
     </ul>
