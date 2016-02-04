@@ -4,6 +4,10 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
+.left-align {
+  text-align: left;
+}
+
 .photo {
   width: 400px;
   height: auto;
@@ -28,10 +32,6 @@ body {
   background-color: rgba(255, 255, 255, 0.9);
 }
 
-.pic-shadow {
-  box-shadow: 1px 3px 15px #fff;
-}
-
 .white-text {
   color:white;
 }
@@ -48,7 +48,8 @@ body {
 
 .post-main {
   padding-top: 15px;
-  width: 600px;
+  width: 98%;
+  max-width: 600px;
   margin: 0 auto;
 }
 
@@ -177,5 +178,29 @@ body {
   box-shadow: 1px 1px 5px orange;
 }
 
+.about {
+  width: 90%;
+  margin: 0 auto;
+  background-color: rgba(255,255,255, 0.8);
+  border-radius: 15px;
+  padding-bottom: 40px;
+}
+
+.profile-box {
+  width: 240px;
+  display:inline-block;
+  margin-right: 25px;
+}
+
+.profile-box img {
+  box-shadow: 1px 2px 8px black;
+  height: 250px;
+  width: auto;
+  margin-bottom: 10px;
+}
+
+.profile-box a {
+  font-weight: 600;
+}
 
 
