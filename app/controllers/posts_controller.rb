@@ -29,10 +29,14 @@ class PostsController < ApplicationController
     end
   end
 
-   def new
-     @post = Post.new
-     @image = @post.images.build
-   end
+ def new
+  if authenticated?
+   @post = Post.new
+   @image = @post.images.build
+  else
+    redirect_to '/login'
+  end
+ end
 
 #create new posts under a given logged in user. Redirect to the post show page if nothing goes wrong. Redirect to the new post form otherwise.
   def create
